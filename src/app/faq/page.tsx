@@ -29,7 +29,6 @@ export default function FaqPage() {
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Veelgestelde vragen" }]} />
-          <span className="eyebrow">Veelgestelde vragen</span>
           <h1>
             Goed om te <em>weten</em>
           </h1>
@@ -37,8 +36,10 @@ export default function FaqPage() {
         </div>
       </section>
       <section className="section section--tight">
-        <div className="wrap wrap--narrow">
-          <Faq items={faqs} />
+        <div className="wrap">
+          <div className="measure">
+            <Faq items={faqs} />
+          </div>
         </div>
       </section>
       <CtaBlock title="Nog een vraag?" text="Stuur ons een bericht of vraag meteen een offerte aan. We denken graag met je mee." />

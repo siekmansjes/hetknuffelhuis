@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CtaBlock } from "@/components/CtaBlock";
 import { JsonLd } from "@/components/JsonLd";
+import { CaseCard } from "@/components/CaseCard";
 import { PhotoSlot } from "@/components/PhotoSlot";
 import { cases } from "@/lib/cases";
 import { PLUSH_MINIMUM, SITE_NAME, SITE_URL, buildPageMetadata } from "@/lib/site";
@@ -37,7 +38,6 @@ export default function KnuffelsPage() {
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Knuffels" }]} />
-          <span className="eyebrow">Knuffels op maat</span>
           <h1>
             Jouw merk, <em>zacht</em> en stevig afgewerkt
           </h1>
@@ -58,7 +58,6 @@ export default function KnuffelsPage() {
       <section className="section section--tight">
         <div className="wrap split">
           <div className="split-copy">
-            <span className="eyebrow">Wat is er mogelijk</span>
             <h2>
               Alles aan je knuffel is <em>jouw keuze</em>
             </h2>
@@ -85,7 +84,6 @@ export default function KnuffelsPage() {
       <section className="section section--deep" aria-labelledby="specs-title">
         <div className="wrap two-col">
           <div className="section-head" style={{ marginBottom: 0 }}>
-            <span className="eyebrow">In het kort</span>
             <h2 id="specs-title">
               De <em>specificaties</em>
             </h2>
@@ -125,20 +123,13 @@ export default function KnuffelsPage() {
       <section className="section" aria-labelledby="proof-title">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">Gemaakt voor anderen</span>
             <h2 id="proof-title">
               Zo zien <em>recente projecten</em> eruit
             </h2>
           </div>
-          <div className="merch-list">
+          <div className="cases-grid">
             {cases.map((item) => (
-              <Link key={item.slug} href={`/cases/${item.slug}`} className="merch-row">
-                <h3>{item.title}</h3>
-                <p>{item.teaser}</p>
-                <span className="link-arrow" aria-hidden="true">
-                  Bekijk
-                </span>
-              </Link>
+              <CaseCard key={item.slug} item={item} />
             ))}
           </div>
         </div>

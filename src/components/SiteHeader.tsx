@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
@@ -23,6 +23,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   // Sluit het menu met Escape (en bij navigatie, via onClick op de links).
   useEffect(() => {
@@ -32,9 +33,17 @@ export function SiteHeader() {
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    // Het menu bedekt de pagina: maak de rest onbereikbaar voor toetsenbord en
+    // schermlezer en zet de focus in het menu; bij sluiten gaat die terug.
+    const behind = document.querySelectorAll<HTMLElement>("main, .site-footer");
+    behind.forEach((el) => el.setAttribute("inert", ""));
+    document.querySelector<HTMLElement>("#mobile-menu a")?.focus();
+    const toggle = toggleRef.current;
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      behind.forEach((el) => el.removeAttribute("inert"));
+      toggle?.focus();
     };
   }, [open]);
 
@@ -62,6 +71,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
+            ref={toggleRef}
             className="menu-toggle"
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -77,7 +87,13 @@ export function SiteHeader() {
       {open && (
         <nav id="mobile-menu" className="mobile-nav" aria-label="Mobiel menu">
           {NAV_ITEMS.map((item) => (
-            <Link key={item.href} href={item.href} className="mobile-link" onClick={close}>
+            <Link
+              key={item.href}
+              href={item.href}
+              className="mobile-link"
+              aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
+              onClick={close}
+            >
               {item.label}
             </Link>
           ))}

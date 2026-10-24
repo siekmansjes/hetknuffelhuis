@@ -18,7 +18,6 @@ export default function CasesPage() {
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Cases" }]} />
-          <span className="eyebrow">Cases</span>
           <h1>
             Onze laatste drie <em>knuffelprojecten</em>
           </h1>

@@ -63,7 +63,7 @@ export function SiteFooter() {
                 LinkedIn
               </a>
             )}
-            <Link href="/contact?mode=offerte" className="btn btn-primary btn-sm" style={{ alignSelf: "flex-start", marginTop: 8, color: "var(--on-accent)" }}>
+            <Link href="/contact?mode=offerte" className="btn btn-primary btn-sm" style={{ alignSelf: "flex-start", marginTop: 8 }}>
               Offerte aanvragen
             </Link>
           </div>

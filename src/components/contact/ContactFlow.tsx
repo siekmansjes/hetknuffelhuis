@@ -29,7 +29,6 @@ export function ContactFlow({ initialMode }: { initialMode?: string }) {
   return (
     <div>
       <div style={{ maxWidth: 640, marginBottom: 40, display: "flex", flexDirection: "column", gap: 16 }}>
-        <span className="eyebrow">Contact</span>
         <h1>
           Waar kunnen we je <em>mee helpen?</em>
         </h1>

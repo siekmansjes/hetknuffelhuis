@@ -26,7 +26,6 @@ export default function PrivacyPage() {
       <div className="wrap wrap--narrow">
         <Breadcrumbs items={[{ name: "Privacybeleid" }]} />
         <div className="prose" style={{ marginTop: 28 }}>
-          <span className="eyebrow">Privacybeleid</span>
           <h1>Privacybeleid</h1>
           <p className="hint">Laatst bijgewerkt: {LAST_UPDATED}</p>
           {!COMPANY.kvk && <p className="placeholder-note">Concept: bedrijfsgegevens en datum nog invullen en tekst laten controleren.</p>}

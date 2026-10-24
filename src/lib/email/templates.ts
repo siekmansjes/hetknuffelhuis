@@ -45,14 +45,14 @@ function fill(template: string, naam: string): string {
 /** De handtekening als HTML, ook los bruikbaar om in een mailprogramma te plakken. */
 export function buildSignatureHtml(signature: EmailSignature): string {
   return (
-    `<div style="margin:0;font-size:13px;line-height:1.5;color:#5d5a7a;font-family:Arial,Helvetica,sans-serif">` +
+    `<div style="margin:0;font-size:13px;line-height:1.5;color:#424e5e;font-family:Arial,Helvetica,sans-serif">` +
     (signature.logoUrl
       ? `<img src="${escapeHtml(signature.logoUrl)}" alt="${escapeHtml(signature.logoAlt)}" width="${signature.logoWidth}" height="${signature.logoHeight}" style="display:block;border:0;margin:0 0 8px">`
       : "") +
     signature.lines
       .map((l) => {
         const inner = l.bold ? `<strong>${escapeHtml(l.text)}</strong>` : escapeHtml(l.text);
-        return l.href ? `<a href="${escapeHtml(l.href)}" style="color:#5d5a7a">${inner}</a>` : inner;
+        return l.href ? `<a href="${escapeHtml(l.href)}" style="color:#424e5e">${inner}</a>` : inner;
       })
       .join("<br>") +
     `</div>`
@@ -82,11 +82,11 @@ export function buildConfirmation(data: ConfirmationData, texts: EmailTexts): Co
       data.summary
         .map(
           (group) =>
-            `<div style="margin:0 0 10px;padding:10px 12px;background:#f6f3ee;border-radius:4px;line-height:1.5">` +
+            `<div style="margin:0 0 10px;padding:10px 12px;background:#f0f4f7;border-radius:4px;line-height:1.5">` +
             group
               .map((l) =>
                 l.label
-                  ? `<span style="color:#5d5a7a">${escapeHtml(l.label)}:</span> ${escapeHtml(l.value).replace(/\n/g, "<br>")}`
+                  ? `<span style="color:#424e5e">${escapeHtml(l.label)}:</span> ${escapeHtml(l.value).replace(/\n/g, "<br>")}`
                   : escapeHtml(l.value).replace(/\n/g, "<br>")
               )
               .join("<br>") +
@@ -98,7 +98,7 @@ export function buildConfirmation(data: ConfirmationData, texts: EmailTexts): Co
   const signatureHtml = buildSignatureHtml(signature);
 
   const html =
-    `<!doctype html><html lang="nl"><body style="margin:0;padding:24px;background:#ffffff;color:#2a2160;font-family:Arial,Helvetica,sans-serif;font-size:15px">` +
+    `<!doctype html><html lang="nl"><body style="margin:0;padding:24px;background:#ffffff;color:#142539;font-family:Arial,Helvetica,sans-serif;font-size:15px">` +
     `<div style="max-width:560px">` +
     p(greeting) +
     copy.intro.map(p).join("") +

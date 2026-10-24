@@ -19,7 +19,6 @@ export default function MerchandisePage() {
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Merchandise" }]} />
-          <span className="eyebrow">Merchandise</span>
           <h1>
             De rest van de set, <em>in dezelfde stijl</em>
           </h1>

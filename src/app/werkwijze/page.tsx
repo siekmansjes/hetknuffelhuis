@@ -24,7 +24,6 @@ export default function WerkwijzePage() {
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Werkwijze" }]} />
-          <span className="eyebrow">Werkwijze</span>
           <h1>
             Van <em>idee</em> tot knuffel
           </h1>
@@ -48,7 +47,6 @@ export default function WerkwijzePage() {
       <section className="section section--deep" aria-labelledby="needed-title">
         <div className="wrap two-col">
           <div className="section-head" style={{ marginBottom: 0 }}>
-            <span className="eyebrow">Voor je offerte</span>
             <h2 id="needed-title">
               Wat we <em>graag van je horen</em>
             </h2>

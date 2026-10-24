@@ -25,7 +25,6 @@ export default function VoorwaardenPage() {
       <div className="wrap wrap--narrow">
         <Breadcrumbs items={[{ name: "Algemene voorwaarden" }]} />
         <div className="prose" style={{ marginTop: 28 }}>
-          <span className="eyebrow">Algemene voorwaarden</span>
           <h1>Algemene voorwaarden</h1>
           <p className="hint">Laatst bijgewerkt: {LAST_UPDATED}</p>
           {!COMPANY.kvk && <p className="placeholder-note">Concept: bedrijfsgegevens invullen en voorwaarden juridisch laten controleren.</p>}

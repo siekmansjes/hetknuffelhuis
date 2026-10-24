@@ -33,11 +33,12 @@ Google Analytics en het domein.
 
 ## Uitstraling
 
-Fris en warm: bijna-wit papier, diepe indigo-inkt, één gedempte blauwe
-actiekleur en zachte vlakken in neutraal grijs, lichtblauw en lila (bewust geen geel).
-Terugkerend merkelement is de **naad**: een gestikte stippellijn als scheiding
-en als rand om beeld. Fonts: Outfit (koppen) en DM Sans (tekst).
-Alle tokens staan bovenin `src/app/globals.css`.
+Fris en warm: warm-wit papier, één koele lichtgrijze vlakkleur, diepe blauwe
+inkt en één gedempte staalblauwe actiekleur. Geen gradients of schaduwen;
+haarlijnen als scheiding en rechthoekige fotovakken met een dunne rand. Fonts:
+Outfit (koppen) en DM Sans (tekst). Alle tokens staan bovenin
+`src/app/globals.css`. Het logo is groen met een oranje giraf; de site laat het
+logo het enige groen zijn.
 
 ## Nog in te vullen (zoek op `TODO` en `[...]`)
 

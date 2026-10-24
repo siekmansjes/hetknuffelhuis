@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       {/* Feiten */}
-      <section className="section section--deep section--tight" aria-label="Kort samengevat">
+      <section className="section section--ruled section--tight" aria-label="Kort samengevat">
         <div className="wrap facts">
           <div>
             <p className="fact-figure">Vanaf {PLUSH_MINIMUM} stuks</p>
@@ -108,7 +108,6 @@ export default function Home() {
             sizes="(max-width: 900px) 100vw, 560px"
           />
           <div className="split-copy">
-            <span className="eyebrow">Zit in de details</span>
             <h2 id="details-title">
               Het verschil zit in de <em>kleine dingen</em>
             </h2>
@@ -134,7 +133,6 @@ export default function Home() {
       <section className="section section--night" aria-labelledby="process-title">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">Werkwijze</span>
             <h2 id="process-title">
               In vier stappen van idee naar <em>knuffel</em>
             </h2>
@@ -159,7 +157,6 @@ export default function Home() {
       <section className="section section--iris" aria-labelledby="merch-title">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">Merchandise</span>
             <h2 id="merch-title">
               Past bij je knuffel: <em>de rest van de set</em>
             </h2>
@@ -184,7 +181,6 @@ export default function Home() {
         <div className="wrap">
           <div className="callout">
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <span className="eyebrow">Kleding eerst voelen?</span>
               <h2 id="sample-title">
                 Vraag een <em>sample</em> aan om maat en kwaliteit te kiezen
               </h2>
@@ -205,7 +201,6 @@ export default function Home() {
       <section className="section section--deep" aria-labelledby="faq-title">
         <div className="wrap two-col">
           <div className="section-head" style={{ marginBottom: 0 }}>
-            <span className="eyebrow">Veelgestelde vragen</span>
             <h2 id="faq-title">
               Goed om te <em>weten</em>
             </h2>

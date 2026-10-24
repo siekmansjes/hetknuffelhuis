@@ -124,7 +124,7 @@ export function OfferteForm({ onBack }: { onBack: () => void }) {
           <label htmlFor="offerte-leverdatum" className="label">
             Gewenste leverdatum
           </label>
-          <input id="offerte-leverdatum" name="leverdatum" type="text" maxLength={LIMITS.korteTekst} placeholder="Bijvoorbeeld begin maart, voor een lancering" className="input" />
+          <input id="offerte-leverdatum" name="leverdatum" type="text" maxLength={LIMITS.korteTekst} placeholder="Bijvoorbeeld begin maart" className="input" />
         </div>
 
         <div className="field">

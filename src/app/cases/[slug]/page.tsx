@@ -36,7 +36,6 @@ export default async function CasePage({ params }: PageProps<"/cases/[slug]">) {
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Cases", href: "/cases" }, { name: item.title }]} />
-          <span className="eyebrow">Case</span>
           <h1 style={{ maxWidth: "20ch" }}>{item.title}</h1>
           <p className="lead">{item.teaser}</p>
           {item.isExample && <p className="placeholder-note">Voorbeeldinhoud: vervang door het echte project.</p>}
@@ -44,17 +43,17 @@ export default async function CasePage({ params }: PageProps<"/cases/[slug]">) {
       </section>
 
       <section className="section section--tight" style={{ paddingTop: 0 }}>
-        <div className="wrap" style={{ display: "flex", flexDirection: "column", gap: 40 }}>
+        <div className="wrap case-hero">
           {item.image ? (
             <div className="frame ratio-16-10" style={{ position: "relative" }}>
-              <Image src={item.image} alt={item.imageAlt ?? ""} fill priority sizes="(max-width: 1240px) 100vw, 1200px" style={{ objectFit: "cover" }} />
+              <Image src={item.image} alt={item.imageAlt ?? ""} fill priority sizes="(max-width: 900px) 100vw, 680px" style={{ objectFit: "cover" }} />
             </div>
           ) : (
             <PhotoSlot
               tone="deep"
               ratio="16-10"
               wanted="Hoofdfoto: de knuffel (of de hele serie) uit dit project, mooi vrijgesteld"
-              sizes="(max-width: 1240px) 100vw, 1200px"
+              sizes="(max-width: 900px) 100vw, 680px"
               priority
             />
           )}
@@ -95,7 +94,6 @@ export default async function CasePage({ params }: PageProps<"/cases/[slug]">) {
       <section className="section" aria-labelledby="details-title">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">De details</span>
             <h2 id="details-title">
               Van dichtbij: <em>waar het in zit</em>
             </h2>
