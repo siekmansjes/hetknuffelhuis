@@ -36,7 +36,7 @@ export default async function CasePage({ params }: PageProps<"/cases/[slug]">) {
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Cases", href: "/cases" }, { name: item.title }]} />
-          <span className="eyebrow">Case · {item.sector}</span>
+          <span className="eyebrow">Case</span>
           <h1 style={{ maxWidth: "20ch" }}>{item.title}</h1>
           <p className="lead">{item.teaser}</p>
           {item.isExample && <p className="placeholder-note">Voorbeeldinhoud: vervang door het echte project.</p>}
@@ -62,10 +62,6 @@ export default async function CasePage({ params }: PageProps<"/cases/[slug]">) {
             <div>
               <dt>Opdrachtgever</dt>
               <dd>{item.klant}</dd>
-            </div>
-            <div>
-              <dt>Aantal</dt>
-              <dd>{item.aantal}</dd>
             </div>
             <div>
               <dt>Formaat</dt>

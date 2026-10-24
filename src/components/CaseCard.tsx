@@ -26,11 +26,6 @@ export function CaseCard({ item, priority = false, large = false }: { item: Case
           />
         )}
       </div>
-      <div className="case-meta">
-        <span>{item.sector}</span>
-        <span aria-hidden="true">·</span>
-        <span>{item.aantal} stuks</span>
-      </div>
       <h3>{item.title}</h3>
       <p>{item.teaser}</p>
       <span className="link-arrow">Bekijk het project</span>

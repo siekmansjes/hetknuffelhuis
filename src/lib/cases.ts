@@ -27,9 +27,7 @@ export type CaseStudy = {
   /** Korte teaser voor de overzichten. */
   teaser: string;
   klant: string;
-  sector: string;
   jaar: string;
-  aantal: string;
   formaat: string;
   opdracht: string;
   aanpak: string;
@@ -59,14 +57,16 @@ export const cases: CaseStudy[] = [
     title: "[Titel van het eerste project]",
     teaser: "[Eén of twee zinnen over dit project: voor wie, welke knuffel en wat maakt hem bijzonder.]",
     klant: "[Klantnaam]",
-    sector: "[Sector]",
     jaar: "[Jaar]",
-    aantal: "[Aantal]",
     formaat: "[Formaat]",
     opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
     aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
     resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
     tone: "surface",
+    // TODO: IMAGE ASSET NEEDED — tijdelijke placeholder (met Parkmade-logo). Vervangen door een
+    // echte foto van project 1.
+    image: "/cases/case-1/voorbeeld-knuffel.webp",
+    imageAlt: "Groene pluche knuffel met gele details (voorbeeldbeeld)",
     details: exampleDetails(),
     isExample: true,
   },
@@ -75,14 +75,15 @@ export const cases: CaseStudy[] = [
     title: "[Titel van het tweede project]",
     teaser: "[Eén of twee zinnen over dit project: voor wie, welke knuffel en wat maakt hem bijzonder.]",
     klant: "[Klantnaam]",
-    sector: "[Sector]",
     jaar: "[Jaar]",
-    aantal: "[Aantal]",
     formaat: "[Formaat]",
     opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
     aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
     resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
     tone: "surface",
+    // TODO: tijdelijke foto; vervangen door de definitieve projectfoto (en de teksten hierboven).
+    image: "/cases/case-2/voorbeeld-knuffel.webp",
+    imageAlt: "Bruine bever-knuffel in een blauw jasje met groene details (voorbeeldbeeld)",
     details: exampleDetails(),
     isExample: true,
   },
@@ -91,9 +92,7 @@ export const cases: CaseStudy[] = [
     title: "[Titel van het derde project]",
     teaser: "[Eén of twee zinnen over dit project: voor wie, welke knuffel en wat maakt hem bijzonder.]",
     klant: "[Klantnaam]",
-    sector: "[Sector]",
     jaar: "[Jaar]",
-    aantal: "[Aantal]",
     formaat: "[Formaat]",
     opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
     aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
