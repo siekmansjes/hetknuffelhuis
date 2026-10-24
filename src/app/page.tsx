@@ -26,7 +26,7 @@ export default function Home() {
           <div className="hero-copy">
             <span className="eyebrow">Voor bedrijven en organisaties</span>
             <h1>
-              Knuffels op maat, <em>tot in de naad.</em>
+              Jouw mascotte als knuffel, <em>helemaal op maat.</em>
             </h1>
             <p className="hero-lead">
               Van jouw mascotte, merk of karakter maken wij een knuffel die mensen graag vasthouden. Naar eigen ontwerp, van schets tot levering, vanaf {PLUSH_MINIMUM} stuks.
@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* Cases */}
-      <section className="section section--butter" aria-labelledby="cases-title">
+      <section className="section section--sky" aria-labelledby="cases-title">
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">Recente projecten</span>
@@ -102,7 +102,7 @@ export default function Home() {
       <section className="section" aria-labelledby="details-title">
         <div className="wrap split">
           <PhotoSlot
-            tone="blush"
+            tone="lilac"
             ratio="4-5"
             wanted="Close-up van een knuffel: borduurwerk, label en vacht in beeld"
             sizes="(max-width: 900px) 100vw, 560px"
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Merchandise */}
-      <section className="section section--sage" aria-labelledby="merch-title">
+      <section className="section section--mint" aria-labelledby="merch-title">
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">Merchandise</span>

@@ -15,18 +15,18 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#fbf6eb",
+          background: "#fdfcf9",
           padding: 72,
-          color: "#2c1b2f",
+          color: "#2a2160",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div style={{ width: 64, height: 64, borderRadius: 16, background: "#2c1b2f", display: "flex" }} />
+          <div style={{ width: 64, height: 64, borderRadius: 16, background: "#2a2160", display: "flex" }} />
           <div style={{ fontSize: 44, fontWeight: 700 }}>Het Knuffelhuis</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          <div style={{ fontSize: 88, fontWeight: 700, lineHeight: 1.05, maxWidth: 900 }}>Knuffels op maat, tot in de naad.</div>
-          <div style={{ fontSize: 34, color: "#c24a2c", fontWeight: 600 }}>Voor bedrijven en organisaties · vanaf 500 stuks</div>
+          <div style={{ fontSize: 88, fontWeight: 700, lineHeight: 1.05, maxWidth: 900 }}>Jouw mascotte als knuffel, helemaal op maat.</div>
+          <div style={{ fontSize: 34, color: "#00808a", fontWeight: 600 }}>Voor bedrijven en organisaties · vanaf 500 stuks</div>
         </div>
       </div>
     ),

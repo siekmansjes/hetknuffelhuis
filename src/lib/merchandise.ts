@@ -3,7 +3,7 @@
 // aantallen en levertijden staan hier bewust niet: die worden per aanvraag
 // afgestemd. Vul ze in `facts` aan zodra ze voor Het Knuffelhuis vaststaan.
 
-export type MerchTone = "butter" | "sage" | "blush" | "deep";
+export type MerchTone = "sky" | "mint" | "lilac" | "deep";
 
 export type MerchItem = {
   slug: string;
@@ -36,7 +36,7 @@ export const merchandise: MerchItem[] = [
       { label: "Verpakking", value: "Per stuk in een kleine polybag" },
     ],
     points: ["Achterzijde bedrukt met eigen logo", "Geschikt voor presentatie bij de kassa"],
-    tone: "butter",
+    tone: "sky",
     photoWanted: "Sleutelhangers in verschillende vormen, vlak neergelegd op een lichte ondergrond",
   },
   {
@@ -51,7 +51,7 @@ export const merchandise: MerchItem[] = [
       { label: "Verpakking", value: "Per stuk in een polybag, met gebruiksinstructie" },
     ],
     points: ["Exclusief displaydoosje: vraag naar de mogelijkheden voor een doosje op maat"],
-    tone: "sage",
+    tone: "mint",
     photo: "/beeld/tattoos-voorbeeld.webp",
     photoAlt: "Tijdelijke tattoos in zakjes, naast een displaydoos (voorbeeldbeeld)",
     photoWanted: "Tattoos in zakjes, bij voorkeur met een kind dat er één opplakt",
@@ -69,7 +69,7 @@ export const merchandise: MerchItem[] = [
       { label: "Verpakking", value: "Per stuk in een kleine polybag" },
     ],
     points: ["Past goed bij een knuffel in dezelfde stijl"],
-    tone: "blush",
+    tone: "lilac",
     photoWanted: "Magneten op een koelkastdeur of metalen vlak, in de stijl van een van de knuffelprojecten",
   },
   {
@@ -83,7 +83,7 @@ export const merchandise: MerchItem[] = [
       { label: "Kleuren", value: "In diverse kleuren, afgestemd op jouw huisstijl" },
     ],
     points: ["Ook bruikbaar voor medewerkers, teams en verenigingen", "Sample aan te vragen om kwaliteit en pasvorm te zien"],
-    tone: "butter",
+    tone: "sky",
     photo: "/beeld/pet-voorbeeld.webp",
     photoAlt: "Trucker cap met opgedrukt mascotte-ontwerp (voorbeeldbeeld)",
     photoWanted: "Cap met bedrukking, schuin van voren, op een lichte achtergrond",
@@ -102,7 +102,7 @@ export const merchandise: MerchItem[] = [
       { label: "Maten", value: "Volwassenen S t/m XXL, kindermaten ook mogelijk" },
     ],
     points: ["Sample aan te vragen om maat en kwaliteit te kiezen", "Veel kleuren beschikbaar"],
-    tone: "sage",
+    tone: "mint",
     photoWanted: "T-shirt en hoodie met bedrukking, plat neergelegd of gedragen",
   },
 ];

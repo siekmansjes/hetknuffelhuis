@@ -71,7 +71,7 @@ export default function KnuffelsPage() {
               ))}
             </ul>
           </div>
-          <PhotoSlot tone="butter" ratio="4-5" wanted="Eén knuffel vrijgesteld op een lichte achtergrond, schuin van voren" sizes="(max-width: 900px) 100vw, 560px" />
+          <PhotoSlot tone="sky" ratio="4-5" wanted="Eén knuffel vrijgesteld op een lichte achtergrond, schuin van voren" sizes="(max-width: 900px) 100vw, 560px" />
         </div>
       </section>
 

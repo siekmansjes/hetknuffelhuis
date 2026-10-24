@@ -2,34 +2,35 @@
 
 /*
  * Design system Het Knuffelhuis
- * Richting: warm atelier. Crèmekleurig papier, aubergine-inkt, één tomaatrode
- * actiekleur en vlakke kleurblokken (boter, salie, blush) in plaats van
- * gradients of schaduwen. Het terugkerende merkelement is de naad: een
- * gestikte stippellijn als scheiding en als rand om beeld.
+ * Richting: fris en warm. Bijna-wit papier, diepe indigo-inkt, één turquoise
+ * actiekleur en zachte vlakken in hemelsblauw, mint en lila, zonder gradients
+ * of schaduwen. Koppen in een eigenzinnige, vriendelijke sans (Bricolage
+ * Grotesque). Het terugkerende merkelement is de naad: een gestikte
+ * stippellijn als scheiding en als rand om beeld.
  */
 :root {
-  --paper: oklch(97.6% 0.018 85);
-  --paper-deep: oklch(94.2% 0.03 82);
-  --surface: oklch(99.4% 0.006 85);
-  --ink: oklch(25% 0.045 330);
-  --ink-soft: oklch(42% 0.04 330);
-  --line: oklch(86% 0.03 80);
+  --paper: oklch(99% 0.006 90);
+  --paper-deep: oklch(96.6% 0.016 85);
+  --surface: oklch(100% 0 0);
+  --ink: oklch(27% 0.075 285);
+  --ink-soft: oklch(44% 0.05 285);
+  --line: oklch(90% 0.02 85);
 
-  /* Eén actiekleur. --accent voor vlakken/knoppen (wit erop = 4,8:1),
-     --accent-text voor kleine rode tekst op papier. */
-  --accent: oklch(55% 0.19 30);
-  --accent-hover: oklch(48% 0.19 30);
-  --accent-text: oklch(49% 0.19 30);
-  --on-accent: oklch(99% 0.01 85);
+  /* Eén actiekleur. --accent voor vlakken/knoppen (wit erop = 4,7:1),
+     --accent-text voor kleine tekst in die kleur op papier. */
+  --accent: oklch(52% 0.115 196);
+  --accent-hover: oklch(44% 0.105 196);
+  --accent-text: oklch(46% 0.11 196);
+  --on-accent: oklch(99% 0.005 90);
 
-  --butter: oklch(94.5% 0.075 92);
-  --sage: oklch(90% 0.05 155);
-  --blush: oklch(90% 0.05 22);
-  --night: oklch(25% 0.045 330);
-  --on-night: oklch(96% 0.02 85);
-  --on-night-soft: oklch(80% 0.03 85);
+  --sky: oklch(95.5% 0.022 235);
+  --mint: oklch(95% 0.035 172);
+  --lilac: oklch(94.5% 0.03 300);
+  --night: oklch(27% 0.075 285);
+  --on-night: oklch(98% 0.01 90);
+  --on-night-soft: oklch(82% 0.04 285);
 
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* Typeschaal (ratio ±1.25), fluïde voor koppen. */
@@ -86,18 +87,17 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.08;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   margin: 0;
   color: var(--ink);
-  font-variation-settings: "SOFT" 100, "WONK" 0;
   text-wrap: balance;
 }
 
 h1 {
   font-size: var(--fs-h1);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 h2 {
   font-size: var(--fs-h2);
@@ -110,8 +110,7 @@ h3 {
 h1 em,
 h2 em,
 h3 em {
-  font-style: italic;
-  font-weight: 500;
+  font-style: normal;
   color: var(--accent-text);
 }
 
@@ -191,14 +190,14 @@ a:hover {
 .section--deep {
   background: var(--paper-deep);
 }
-.section--butter {
-  background: var(--butter);
+.section--sky {
+  background: var(--sky);
 }
-.section--sage {
-  background: var(--sage);
+.section--mint {
+  background: var(--mint);
 }
-.section--blush {
-  background: var(--blush);
+.section--lilac {
+  background: var(--lilac);
 }
 .section--night {
   background: var(--night);
@@ -210,10 +209,10 @@ a:hover {
 }
 .section--night h2 em,
 .section--night h3 em {
-  color: var(--butter);
+  color: var(--sky);
 }
 .section--night a:not(.btn) {
-  color: var(--butter);
+  color: var(--sky);
 }
 .section--accent {
   background: var(--accent);
@@ -255,7 +254,7 @@ a:hover {
   background: repeating-linear-gradient(90deg, currentColor 0 6px, transparent 6px 10px);
 }
 .section--night .eyebrow {
-  color: var(--butter);
+  color: var(--sky);
 }
 
 .prose {
@@ -349,7 +348,7 @@ a:hover {
   color: var(--ink);
 }
 .section--accent .btn-primary:hover {
-  background: var(--butter);
+  background: var(--sky);
   color: var(--ink);
 }
 .btn-sm {
@@ -404,16 +403,19 @@ a:hover {
   color: var(--ink);
   flex-shrink: 0;
 }
+.brand svg {
+  flex-shrink: 0;
+}
 .brand:hover {
   color: var(--ink);
 }
 .brand-name {
+  white-space: nowrap;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.3rem;
   letter-spacing: -0.02em;
   line-height: 1;
-  font-variation-settings: "SOFT" 100;
 }
 .main-nav {
   display: none;
@@ -506,7 +508,7 @@ a:hover {
   text-decoration: none;
 }
 .site-footer a:hover {
-  color: var(--butter);
+  color: var(--sky);
   text-decoration: underline;
 }
 .footer-grid {
@@ -530,7 +532,7 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--butter);
+  color: var(--sky);
   margin-bottom: 6px;
 }
 .footer-bottom {
@@ -551,7 +553,7 @@ a:hover {
   cursor: pointer;
 }
 .footer-bottom button:hover {
-  color: var(--butter);
+  color: var(--sky);
   text-decoration: underline;
 }
 
@@ -653,14 +655,17 @@ a:hover {
   color: var(--ink);
   font-size: 0.95rem;
 }
-.photo-slot--butter {
-  background: var(--butter);
+.photo-slot--surface {
+  background: var(--surface);
 }
-.photo-slot--sage {
-  background: var(--sage);
+.photo-slot--sky {
+  background: var(--sky);
 }
-.photo-slot--blush {
-  background: var(--blush);
+.photo-slot--mint {
+  background: var(--mint);
+}
+.photo-slot--lilac {
+  background: var(--lilac);
 }
 .ratio-4-3 {
   aspect-ratio: 4 / 3;
@@ -701,7 +706,6 @@ a:hover {
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  font-variation-settings: "SOFT" 100;
 }
 .fact-text {
   margin-top: 6px;
@@ -777,7 +781,7 @@ a:hover {
   gap: 8px;
   font-size: var(--fs-sm);
   font-weight: 600;
-  background: var(--butter);
+  background: var(--sky);
   color: var(--ink);
   padding: 6px 12px;
   border-radius: 8px;
@@ -933,8 +937,8 @@ a:hover {
   background: var(--accent);
   box-shadow: inset 0 0 0 5px var(--accent), inset 0 0 0 7px var(--paper);
 }
-.section--sage .check-list li::before,
-.section--butter .check-list li::before {
+.section--mint .check-list li::before,
+.section--sky .check-list li::before {
   box-shadow: inset 0 0 0 5px var(--accent);
 }
 
@@ -998,7 +1002,7 @@ a:hover {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--butter);
+  background: var(--sky);
   color: var(--ink);
   font-family: var(--font-display);
   font-weight: 600;
@@ -1111,7 +1115,7 @@ a:hover {
   gap: 24px;
   padding: clamp(28px, 4vw, 48px);
   border-radius: var(--radius-lg);
-  background: var(--blush);
+  background: var(--lilac);
   position: relative;
 }
 .callout::after {
@@ -1328,12 +1332,12 @@ fieldset.field {
 }
 .choice input:checked + span {
   border-color: var(--ink);
-  background: var(--butter);
+  background: var(--sky);
 }
 .choice input:checked + span::before {
   border-color: var(--ink);
   background: var(--ink)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fbf6eb' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fdfcf9' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
     center / 100% no-repeat;
 }
 .choice input:focus-visible + span {
@@ -1448,7 +1452,7 @@ fieldset.field {
 }
 .mode-card:hover {
   transform: translateY(-3px);
-  background: var(--butter);
+  background: var(--sky);
 }
 .mode-card--primary {
   background: var(--ink);
@@ -1474,7 +1478,7 @@ fieldset.field {
   padding-top: 8px;
 }
 .mode-card--primary .link-arrow {
-  color: var(--butter);
+  color: var(--sky);
 }
 
 /* ---------- Cookiemelding ---------- */
@@ -1496,7 +1500,7 @@ fieldset.field {
   font-size: 0.95rem;
 }
 .cookie-bar a {
-  color: var(--butter);
+  color: var(--sky);
 }
 .cookie-bar .btn-secondary {
   color: var(--on-night);
@@ -1507,7 +1511,7 @@ fieldset.field {
   color: var(--night);
 }
 .cookie-bar .btn-primary {
-  background: var(--butter);
+  background: var(--sky);
   color: var(--ink);
 }
 .cookie-bar .btn-primary:hover {

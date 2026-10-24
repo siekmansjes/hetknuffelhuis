@@ -51,7 +51,7 @@ export default async function CasePage({ params }: PageProps<"/cases/[slug]">) {
             </div>
           ) : (
             <PhotoSlot
-              tone={item.tone}
+              tone="deep"
               ratio="16-10"
               wanted="Hoofdfoto: de knuffel (of de hele serie) uit dit project, mooi vrijgesteld"
               sizes="(max-width: 1240px) 100vw, 1200px"

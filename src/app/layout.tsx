@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, DM_Sans } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CookieNotice } from "@/components/CookieNotice";
@@ -8,13 +8,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { COMPANY, INDEXING_ENABLED, ORGANIZATION_ID, PLUSH_MINIMUM, SITE_NAME, SITE_URL, WEBSITE_ID, buildPageMetadata } from "@/lib/site";
 import "./globals.css";
 
-// Koppen: Fraunces, een zachte serif met karakter (de SOFT-as maakt de
-// uiteinden rond, passend bij knuffels). Tekst: DM Sans, rustig en goed leesbaar.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// Koppen: Bricolage Grotesque, een vriendelijke sans met een eigen gezicht
+// (geen standaard-lettertype). Tekst: DM Sans, rustig en goed leesbaar.
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["SOFT", "opsz"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fbf6eb",
+  themeColor: "#fdfcf9",
 };
 
 const organizationJsonLd = {
@@ -68,7 +67,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" className={`${fraunces.variable} ${dmSans.variable}`}>
+    <html lang="nl" className={`${bricolage.variable} ${dmSans.variable}`}>
       <body>
         <a href="#main" className="skip-link">
           Naar de inhoud

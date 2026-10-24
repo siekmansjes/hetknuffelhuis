@@ -28,7 +28,7 @@ export default function CasesPage() {
           )}
         </div>
       </section>
-      <section className="section section--tight">
+      <section className="section section--tight section--deep">
         <div className="wrap">
           <div className="cases-grid--wide">
             {cases.map((item, i) => (

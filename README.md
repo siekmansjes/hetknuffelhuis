@@ -33,11 +33,11 @@ Google Analytics en het domein.
 
 ## Uitstraling
 
-Warm atelier: crèmekleurig papier, aubergine-inkt, één tomaatrode actiekleur en
-vlakke kleurblokken (boter, salie, blush). Terugkerend merkelement is de
-**naad**: een gestikte stippellijn als scheiding en als rand om beeld.
-Fonts: Fraunces (koppen) en DM Sans (tekst). Alle tokens staan bovenin
-`src/app/globals.css`.
+Fris en warm: bijna-wit papier, diepe indigo-inkt, één turquoise
+actiekleur en zachte vlakken in hemelsblauw, mint en lila (bewust geen geel).
+Terugkerend merkelement is de **naad**: een gestikte stippellijn als scheiding
+en als rand om beeld. Fonts: Bricolage Grotesque (koppen) en DM Sans (tekst).
+Alle tokens staan bovenin `src/app/globals.css`.
 
 ## Nog in te vullen (zoek op `TODO` en `[...]`)
 

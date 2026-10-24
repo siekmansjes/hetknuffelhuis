@@ -9,7 +9,7 @@
 // Foto's: zet de bestanden in /public/cases/<slug>/ en vul `image` /
 // `photo` in met het pad, bv. "/cases/case-1/hero.webp".
 
-export type CaseTone = "butter" | "sage" | "blush" | "deep";
+export type CaseTone = "sky" | "mint" | "lilac" | "deep" | "surface";
 
 export type CaseDetail = {
   title: string;
@@ -43,7 +43,7 @@ export type CaseStudy = {
 };
 
 const DETAIL_TITLES = ["Borduurwerk", "Label & hangtag", "Stof & vacht", "Verpakking"] as const;
-const DETAIL_TONES: CaseTone[] = ["butter", "sage", "blush", "deep"];
+const DETAIL_TONES: CaseTone[] = ["sky", "mint", "lilac", "deep"];
 
 function exampleDetails(): CaseDetail[] {
   return DETAIL_TITLES.map((title, i) => ({
@@ -66,7 +66,7 @@ export const cases: CaseStudy[] = [
     opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
     aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
     resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
-    tone: "sage",
+    tone: "surface",
     details: exampleDetails(),
     isExample: true,
   },
@@ -82,7 +82,7 @@ export const cases: CaseStudy[] = [
     opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
     aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
     resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
-    tone: "blush",
+    tone: "surface",
     details: exampleDetails(),
     isExample: true,
   },
@@ -98,7 +98,7 @@ export const cases: CaseStudy[] = [
     opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
     aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
     resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
-    tone: "deep",
+    tone: "surface",
     details: exampleDetails(),
     isExample: true,
   },

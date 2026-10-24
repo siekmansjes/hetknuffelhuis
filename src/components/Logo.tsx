@@ -6,8 +6,8 @@ export function LogoMark({ size = 40 }: { size?: number }) {
       {/* oren */}
       <circle cx="12.5" cy="15" r="6.5" fill="var(--accent)" />
       <circle cx="35.5" cy="15" r="6.5" fill="var(--accent)" />
-      <circle cx="12.5" cy="15" r="3" fill="var(--butter)" />
-      <circle cx="35.5" cy="15" r="3" fill="var(--butter)" />
+      <circle cx="12.5" cy="15" r="3" fill="var(--sky)" />
+      <circle cx="35.5" cy="15" r="3" fill="var(--sky)" />
       {/* huis */}
       <path
         d="M24 5.5 43.5 21v19.5a4 4 0 0 1-4 4h-31a4 4 0 0 1-4-4V21L24 5.5Z"
@@ -16,7 +16,7 @@ export function LogoMark({ size = 40 }: { size?: number }) {
       {/* gezichtje */}
       <circle cx="18" cy="28.5" r="2" fill="var(--paper)" />
       <circle cx="30" cy="28.5" r="2" fill="var(--paper)" />
-      <ellipse cx="24" cy="33.5" rx="3.2" ry="2.4" fill="var(--butter)" />
+      <ellipse cx="24" cy="33.5" rx="3.2" ry="2.4" fill="var(--sky)" />
       {/* naad */}
       <path d="M24 36v6" stroke="var(--paper)" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="2.4 2.8" />
     </svg>
