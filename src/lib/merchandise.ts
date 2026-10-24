@@ -3,7 +3,7 @@
 // aantallen en levertijden staan hier bewust niet: die worden per aanvraag
 // afgestemd. Vul ze in `facts` aan zodra ze voor Het Knuffelhuis vaststaan.
 
-export type MerchTone = "sky" | "mint" | "lilac" | "deep";
+export type MerchTone = "sky" | "iris" | "lilac" | "deep";
 
 export type MerchItem = {
   slug: string;
@@ -28,7 +28,7 @@ export const merchandise: MerchItem[] = [
     name: "Sleutelhangers",
     short: "Zacht PVC met 2.5D-reliëf, in de vorm van jouw ontwerp.",
     intro:
-      "Sleutelhangers op maat, gemaakt naar jouw eigen ontwerp en vorm. Laat je mascotte of logo uitvoeren in zacht PVC met 2.5D-reliëf, met ruimte voor je logo op de achterzijde.",
+      "Sleutelhangers op maat, gemaakt naar jouw eigen ontwerp en vorm. Laat je logo of karakter uitvoeren in zacht PVC met 2.5D-reliëf, met ruimte voor je logo op de achterzijde.",
     specs: [
       { label: "Materiaal", value: "Zacht PVC, 2.5D-reliëf" },
       { label: "Afmeting", value: "5-6 cm hoog" },
@@ -42,16 +42,16 @@ export const merchandise: MerchItem[] = [
   {
     slug: "tijdelijke-tattoos",
     name: "Tijdelijke tattoo’s",
-    short: "Eigen ontwerp of mascotte, populair bij kinderen.",
+    short: "Eigen ontwerp, populair bij kinderen.",
     intro:
-      "Tijdelijke tattoo met eigen ontwerp of mascotte. Blijft goed zitten, ook bij contact met water, en is per stuk verpakt met de gebruiksinstructie achterop.",
+      "Tijdelijke tattoo met eigen ontwerp. Blijft goed zitten, ook bij contact met water, en is per stuk verpakt met de gebruiksinstructie achterop.",
     specs: [
       { label: "Materiaal", value: "Papier en recyclebare folie" },
       { label: "Afmeting", value: "5 x 5 cm" },
       { label: "Verpakking", value: "Per stuk in een polybag, met gebruiksinstructie" },
     ],
     points: ["Exclusief displaydoosje: vraag naar de mogelijkheden voor een doosje op maat"],
-    tone: "mint",
+    tone: "iris",
     photo: "/beeld/tattoos-voorbeeld.webp",
     photoAlt: "Tijdelijke tattoos in zakjes, naast een displaydoos (voorbeeldbeeld)",
     photoWanted: "Tattoos in zakjes, bij voorkeur met een kind dat er één opplakt",
@@ -59,9 +59,9 @@ export const merchandise: MerchItem[] = [
   {
     slug: "magneten",
     name: "Magneten",
-    short: "Koelkastmagneet in de vorm van jouw mascotte.",
+    short: "Koelkastmagneet in de vorm van jouw logo of ontwerp.",
     intro:
-      "Een koelkastmagneet in de vorm van jouw mascotte of eigen ontwerp. Uitgevoerd in PVC met 2.5D-reliëf: een klein souvenir dat mensen graag meenemen.",
+      "Een koelkastmagneet in de vorm van jouw logo of eigen ontwerp. Uitgevoerd in PVC met 2.5D-reliëf: een klein souvenir dat mensen graag meenemen.",
     specs: [
       { label: "Materiaal", value: "PVC, 2.5D-reliëf" },
       { label: "Afmeting", value: "5-6 cm" },
@@ -85,7 +85,7 @@ export const merchandise: MerchItem[] = [
     points: ["Ook bruikbaar voor medewerkers, teams en verenigingen", "Sample aan te vragen om kwaliteit en pasvorm te zien"],
     tone: "sky",
     photo: "/beeld/pet-voorbeeld.webp",
-    photoAlt: "Trucker cap met opgedrukt mascotte-ontwerp (voorbeeldbeeld)",
+    photoAlt: "Trucker cap met opgedrukt ontwerp (voorbeeldbeeld)",
     photoWanted: "Cap met bedrukking, schuin van voren, op een lichte achtergrond",
   },
   {
@@ -102,7 +102,7 @@ export const merchandise: MerchItem[] = [
       { label: "Maten", value: "Volwassenen S t/m XXL, kindermaten ook mogelijk" },
     ],
     points: ["Sample aan te vragen om maat en kwaliteit te kiezen", "Veel kleuren beschikbaar"],
-    tone: "mint",
+    tone: "iris",
     photoWanted: "T-shirt en hoodie met bedrukking, plat neergelegd of gedragen",
   },
 ];

@@ -33,10 +33,10 @@ Google Analytics en het domein.
 
 ## Uitstraling
 
-Fris en warm: bijna-wit papier, diepe indigo-inkt, één turquoise
-actiekleur en zachte vlakken in hemelsblauw, mint en lila (bewust geen geel).
+Fris en warm: bijna-wit papier, diepe indigo-inkt, één gedempte blauwe
+actiekleur en zachte vlakken in neutraal grijs, lichtblauw en lila (bewust geen geel).
 Terugkerend merkelement is de **naad**: een gestikte stippellijn als scheiding
-en als rand om beeld. Fonts: Bricolage Grotesque (koppen) en DM Sans (tekst).
+en als rand om beeld. Fonts: Outfit (koppen) en DM Sans (tekst).
 Alle tokens staan bovenin `src/app/globals.css`.
 
 ## Nog in te vullen (zoek op `TODO` en `[...]`)

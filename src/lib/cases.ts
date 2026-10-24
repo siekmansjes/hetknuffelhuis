@@ -9,7 +9,7 @@
 // Foto's: zet de bestanden in /public/cases/<slug>/ en vul `image` /
 // `photo` in met het pad, bv. "/cases/case-1/hero.webp".
 
-export type CaseTone = "sky" | "mint" | "lilac" | "deep" | "surface";
+export type CaseTone = "sky" | "iris" | "lilac" | "deep" | "surface";
 
 export type CaseDetail = {
   title: string;
@@ -43,7 +43,7 @@ export type CaseStudy = {
 };
 
 const DETAIL_TITLES = ["Borduurwerk", "Label & hangtag", "Stof & vacht", "Verpakking"] as const;
-const DETAIL_TONES: CaseTone[] = ["sky", "mint", "lilac", "deep"];
+const DETAIL_TONES: CaseTone[] = ["sky", "iris", "lilac", "deep"];
 
 function exampleDetails(): CaseDetail[] {
   return DETAIL_TITLES.map((title, i) => ({

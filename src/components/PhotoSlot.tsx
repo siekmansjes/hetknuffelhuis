@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 
-type Tone = "sky" | "mint" | "lilac" | "deep" | "surface";
+type Tone = "sky" | "iris" | "lilac" | "deep" | "surface";
 
 /**
  * Toont de echte foto als die er is; anders een herkenbaar fotovak waarin staat

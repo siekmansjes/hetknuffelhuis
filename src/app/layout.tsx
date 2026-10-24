@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { Outfit, DM_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CookieNotice } from "@/components/CookieNotice";
@@ -8,12 +8,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { COMPANY, INDEXING_ENABLED, ORGANIZATION_ID, PLUSH_MINIMUM, SITE_NAME, SITE_URL, WEBSITE_ID, buildPageMetadata } from "@/lib/site";
 import "./globals.css";
 
-// Koppen: Bricolage Grotesque, een vriendelijke sans met een eigen gezicht
-// (geen standaard-lettertype). Tekst: DM Sans, rustig en goed leesbaar.
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+// Koppen: Outfit, een ronde, geometrische sans met rustige letters (f en ff
+// zijn gewoon). Tekst: DM Sans, rustig en goed leesbaar.
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -67,7 +67,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" className={`${bricolage.variable} ${dmSans.variable}`}>
+    <html lang="nl" className={`${outfit.variable} ${dmSans.variable}`}>
       <body>
         <a href="#main" className="skip-link">
           Naar de inhoud

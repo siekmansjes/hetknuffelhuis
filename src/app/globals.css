@@ -2,10 +2,9 @@
 
 /*
  * Design system Het Knuffelhuis
- * Richting: fris en warm. Bijna-wit papier, diepe indigo-inkt, één turquoise
- * actiekleur en zachte vlakken in hemelsblauw, mint en lila, zonder gradients
- * of schaduwen. Koppen in een eigenzinnige, vriendelijke sans (Bricolage
- * Grotesque). Het terugkerende merkelement is de naad: een gestikte
+ * Richting: fris en warm. Bijna-wit papier, diepe indigo-inkt, één gedempte blauwe
+ * actiekleur en zachte vlakken in hemelsblauw, iris en lila, zonder gradients
+ * of schaduwen. Koppen in een ronde, vriendelijke sans (Outfit). Het terugkerende merkelement is de naad: een gestikte
  * stippellijn als scheiding en als rand om beeld.
  */
 :root {
@@ -18,19 +17,20 @@
 
   /* Eén actiekleur. --accent voor vlakken/knoppen (wit erop = 4,7:1),
      --accent-text voor kleine tekst in die kleur op papier. */
-  --accent: oklch(52% 0.115 196);
-  --accent-hover: oklch(44% 0.105 196);
-  --accent-text: oklch(46% 0.11 196);
+  --accent: oklch(46% 0.085 255);
+  --accent-hover: oklch(39% 0.08 255);
+  --accent-text: oklch(43% 0.09 255);
   --on-accent: oklch(99% 0.005 90);
 
   --sky: oklch(95.8% 0.005 250);
-  --mint: oklch(95% 0.035 172);
-  --lilac: oklch(94.5% 0.03 300);
+  --iris: oklch(95.5% 0.012 265);
+  --lilac: oklch(95% 0.016 300);
   --night: oklch(27% 0.075 285);
   --on-night: oklch(98% 0.01 90);
   --on-night-soft: oklch(82% 0.04 285);
+  --on-night-accent: oklch(84% 0.05 262);
 
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* Typeschaal (ratio ±1.25), fluïde voor koppen. */
@@ -193,8 +193,8 @@ a:hover {
 .section--sky {
   background: var(--sky);
 }
-.section--mint {
-  background: var(--mint);
+.section--iris {
+  background: var(--iris);
 }
 .section--lilac {
   background: var(--lilac);
@@ -209,10 +209,10 @@ a:hover {
 }
 .section--night h2 em,
 .section--night h3 em {
-  color: var(--sky);
+  color: var(--on-night-accent);
 }
 .section--night a:not(.btn) {
-  color: var(--sky);
+  color: var(--on-night-accent);
 }
 .section--accent {
   background: var(--accent);
@@ -254,7 +254,7 @@ a:hover {
   background: repeating-linear-gradient(90deg, currentColor 0 6px, transparent 6px 10px);
 }
 .section--night .eyebrow {
-  color: var(--sky);
+  color: var(--on-night-accent);
 }
 
 .prose {
@@ -508,7 +508,7 @@ a:hover {
   text-decoration: none;
 }
 .site-footer a:hover {
-  color: var(--sky);
+  color: var(--on-night-accent);
   text-decoration: underline;
 }
 .footer-grid {
@@ -532,7 +532,7 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--sky);
+  color: var(--on-night-accent);
   margin-bottom: 6px;
 }
 .footer-bottom {
@@ -553,7 +553,7 @@ a:hover {
   cursor: pointer;
 }
 .footer-bottom button:hover {
-  color: var(--sky);
+  color: var(--on-night-accent);
   text-decoration: underline;
 }
 
@@ -661,8 +661,8 @@ a:hover {
 .photo-slot--sky {
   background: var(--sky);
 }
-.photo-slot--mint {
-  background: var(--mint);
+.photo-slot--iris {
+  background: var(--iris);
 }
 .photo-slot--lilac {
   background: var(--lilac);
@@ -937,7 +937,7 @@ a:hover {
   background: var(--accent);
   box-shadow: inset 0 0 0 5px var(--accent), inset 0 0 0 7px var(--paper);
 }
-.section--mint .check-list li::before,
+.section--iris .check-list li::before,
 .section--sky .check-list li::before {
   box-shadow: inset 0 0 0 5px var(--accent);
 }
@@ -1478,7 +1478,7 @@ fieldset.field {
   padding-top: 8px;
 }
 .mode-card--primary .link-arrow {
-  color: var(--sky);
+  color: var(--on-night-accent);
 }
 
 /* ---------- Cookiemelding ---------- */
@@ -1500,7 +1500,7 @@ fieldset.field {
   font-size: 0.95rem;
 }
 .cookie-bar a {
-  color: var(--sky);
+  color: var(--on-night-accent);
 }
 .cookie-bar .btn-secondary {
   color: var(--on-night);

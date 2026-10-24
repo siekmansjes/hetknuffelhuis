@@ -11,7 +11,7 @@ import { steps } from "@/lib/process";
 import { PLUSH_MINIMUM } from "@/lib/site";
 
 const DETAILS = [
-  { title: "Vorm en formaat", text: "Jouw mascotte of karakter, nagemaakt tot in het kleinste detail. Vorm, kleur en materiaal naar wens." },
+  { title: "Vorm en formaat", text: "Jouw karakter, logo of ontwerp, nagemaakt tot in het kleinste detail. Vorm, kleur en materiaal naar wens." },
   { title: "Stof en afwerking", text: "Meestal zachte velboa of pluche, met geborduurde details die blijven zitten." },
   { title: "Label en hangtag", text: "Een waslabel en hangtag in jouw eigen ontwerp, zodat de knuffel van begin tot eind van jou is." },
   { title: "Veilig voor iedereen", text: "Gemaakt en getest volgens de geldende EU-normen, veilig voor alle leeftijden." },
@@ -26,10 +26,10 @@ export default function Home() {
           <div className="hero-copy">
             <span className="eyebrow">Voor bedrijven en organisaties</span>
             <h1>
-              Jouw mascotte als knuffel, <em>helemaal op maat.</em>
+              Jouw merk als knuffel, <em>helemaal op maat.</em>
             </h1>
             <p className="hero-lead">
-              Van jouw mascotte, merk of karakter maken wij een knuffel die mensen graag vasthouden. Naar eigen ontwerp, van schets tot levering, vanaf {PLUSH_MINIMUM} stuks.
+              Van jouw merk, logo of eigen karakter maken wij een knuffel die mensen graag vasthouden. Naar eigen ontwerp, van schets tot levering, vanaf {PLUSH_MINIMUM} stuks.
             </p>
             <div className="cta-row">
               <Link href="/contact?mode=offerte" className="btn btn-primary">
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Merchandise */}
-      <section className="section section--mint" aria-labelledby="merch-title">
+      <section className="section section--iris" aria-labelledby="merch-title">
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">Merchandise</span>

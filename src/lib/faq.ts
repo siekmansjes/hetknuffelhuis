@@ -14,7 +14,7 @@ export const faqs: FaqEntry[] = [
   {
     question: "Voor wie maken jullie knuffels?",
     answer: [
-      "Voor bedrijven, organisaties, merken, verenigingen en andere opdrachtgevers die een eigen mascotte of karakter als knuffel willen laten maken, bijvoorbeeld als relatiegeschenk, verkoopartikel of cadeau voor klanten en medewerkers.",
+      "Voor bedrijven, organisaties, merken, verenigingen en andere opdrachtgevers die een eigen karakter of ontwerp als knuffel willen laten maken, bijvoorbeeld als relatiegeschenk, verkoopartikel of cadeau voor klanten en medewerkers.",
     ],
   },
   {

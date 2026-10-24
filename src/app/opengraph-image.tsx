@@ -25,8 +25,8 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 44, fontWeight: 700 }}>Het Knuffelhuis</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          <div style={{ fontSize: 88, fontWeight: 700, lineHeight: 1.05, maxWidth: 900 }}>Jouw mascotte als knuffel, helemaal op maat.</div>
-          <div style={{ fontSize: 34, color: "#00808a", fontWeight: 600 }}>Voor bedrijven en organisaties · vanaf 500 stuks</div>
+          <div style={{ fontSize: 88, fontWeight: 700, lineHeight: 1.05, maxWidth: 900 }}>Jouw merk als knuffel, helemaal op maat.</div>
+          <div style={{ fontSize: 34, color: "#3f5f8f", fontWeight: 600 }}>Voor bedrijven en organisaties · vanaf 500 stuks</div>
         </div>
       </div>
     ),

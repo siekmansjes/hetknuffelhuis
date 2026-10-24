@@ -9,12 +9,12 @@ import { PLUSH_MINIMUM, SITE_NAME, SITE_URL, buildPageMetadata } from "@/lib/sit
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Knuffels op maat laten maken",
-  description: `Laat een knuffel op maat maken van jouw mascotte of merk, vanaf ${PLUSH_MINIMUM} stuks. Eigen vorm, kleur en materiaal, met borduurwerk, label en hangtag naar eigen ontwerp.`,
+  description: `Laat een knuffel op maat maken van jouw merk of eigen ontwerp, vanaf ${PLUSH_MINIMUM} stuks. Eigen vorm, kleur en materiaal, met borduurwerk, label en hangtag naar eigen ontwerp.`,
   path: "/knuffels",
 });
 
 const OPTIONS = [
-  { title: "Vorm en formaat", text: "We bouwen jouw mascotte of karakter na, tot in het kleinste detail. Het formaat bepaal je zelf." },
+  { title: "Vorm en formaat", text: "We bouwen jouw karakter of ontwerp na, tot in het kleinste detail. Het formaat bepaal je zelf." },
   { title: "Kleur en materiaal", text: "Meestal soft velboa of pluche. We kiezen samen de stof en kleuren die bij het karakter passen." },
   { title: "Details en borduurwerk", text: "Gezichten, logo’s en andere details worden geborduurd, zodat ze scherp blijven en goed tegen knuffelen kunnen." },
   { title: "Label en hangtag", text: "Compleet afgewerkt met een waslabel en een hangtag naar jouw eigen ontwerp." },
@@ -39,7 +39,7 @@ export default function KnuffelsPage() {
           <Breadcrumbs items={[{ name: "Knuffels" }]} />
           <span className="eyebrow">Knuffels op maat</span>
           <h1>
-            Jouw mascotte, <em>zacht</em> en stevig afgewerkt
+            Jouw merk, <em>zacht</em> en stevig afgewerkt
           </h1>
           <p className="lead">
             We maken knuffels naar jouw eigen ontwerp: vorm, kleur en materiaal volledig naar wens. Voor bedrijven, organisaties en merken, vanaf {PLUSH_MINIMUM} stuks.
