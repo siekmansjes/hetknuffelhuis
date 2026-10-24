@@ -47,7 +47,7 @@ const organizationJsonLd = {
       "@id": ORGANIZATION_ID,
       name: SITE_NAME,
       url: SITE_URL,
-      logo: `${SITE_URL}/icon.svg`,
+      logo: `${SITE_URL}/logo.webp`,
       description: `${SITE_NAME} maakt knuffels op maat voor bedrijven en organisaties, vanaf ${PLUSH_MINIMUM} stuks, en levert daarnaast sleutelhangers, tijdelijke tattoo’s, magneten, petjes en kleding.`,
       ...(COMPANY.email ? { email: COMPANY.email } : {}),
       ...(COMPANY.phoneInternational ? { telephone: `+${COMPANY.phoneInternational}` } : {}),

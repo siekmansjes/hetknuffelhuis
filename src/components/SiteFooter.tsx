@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoMark } from "@/components/Logo";
+import { LogoFull } from "@/components/Logo";
 import { CookieSettingsButton } from "@/components/CookieNotice";
 import { COMPANY, PLUSH_MINIMUM, whatsappUrl } from "@/lib/site";
 import { merchandise } from "@/lib/merchandise";
@@ -16,9 +16,8 @@ export function SiteFooter() {
       <div className="wrap">
         <div className="footer-grid">
           <div className="footer-col">
-            <div className="brand" style={{ color: "var(--on-night)" }}>
-              <LogoMark size={44} />
-              <span className="brand-name">Het Knuffelhuis</span>
+            <div className="footer-logo">
+              <LogoFull width={200} />
             </div>
             <p style={{ maxWidth: 300 }}>
               Knuffels op maat voor bedrijven en organisaties, vanaf {PLUSH_MINIMUM} stuks. Met sleutelhangers, tattoo’s, magneten, petjes en kleding in dezelfde

@@ -30,3 +30,6 @@ next-env.d.ts
 
 # graphify (lokale tooling-output)
 graphify-out/
+
+# originele (grote) bronbestanden, o.a. het logo: lokaal bewaren, niet pushen
+/bronbestanden/

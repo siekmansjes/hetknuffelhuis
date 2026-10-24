@@ -6,13 +6,18 @@ import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
 
 export const NAV_ITEMS = [
-  { href: "/knuffels", label: "Knuffels" },
+  { href: "/", label: "Home" },
   { href: "/cases", label: "Cases" },
   { href: "/merchandise", label: "Merchandise" },
   { href: "/werkwijze", label: "Werkwijze" },
   { href: "/faq", label: "Veelgestelde vragen" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+// Home alleen op exact "/", de rest ook op onderliggende pagina's (bv. /cases/case-1).
+function isCurrent(pathname: string, href: string) {
+  return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -45,7 +50,7 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               className="nav-link"
-              aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? "page" : undefined}
+              aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
             >
               {item.label}
             </Link>
@@ -71,9 +76,6 @@ export function SiteHeader() {
       </div>
       {open && (
         <nav id="mobile-menu" className="mobile-nav" aria-label="Mobiel menu">
-          <Link href="/" className="mobile-link" onClick={close}>
-            Home
-          </Link>
           {NAV_ITEMS.map((item) => (
             <Link key={item.href} href={item.href} className="mobile-link" onClick={close}>
               {item.label}

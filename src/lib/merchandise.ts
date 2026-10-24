@@ -37,6 +37,9 @@ export const merchandise: MerchItem[] = [
     ],
     points: ["Achterzijde bedrukt met eigen logo", "Geschikt voor presentatie bij de kassa"],
     tone: "sky",
+    // TODO: IMAGE ASSET NEEDED — tijdelijk voorbeeldbeeld (met Parkmade-logo); vervangen door eigen foto.
+    photo: "/beeld/sleutelhangers-voorbeeld.webp",
+    photoAlt: "Verschillende sleutelhangers in zacht PVC en van pluche (voorbeeldbeeld)",
     photoWanted: "Sleutelhangers in verschillende vormen, vlak neergelegd op een lichte ondergrond",
   },
   {
@@ -70,6 +73,9 @@ export const merchandise: MerchItem[] = [
     ],
     points: ["Past goed bij een knuffel in dezelfde stijl"],
     tone: "lilac",
+    // TODO: IMAGE ASSET NEEDED — tijdelijk voorbeeldbeeld (met Parkmade-logo); vervangen door eigen foto.
+    photo: "/beeld/magneten-voorbeeld.webp",
+    photoAlt: "Verschillende magneten in de vorm van dieren, objecten en logo's (voorbeeldbeeld)",
     photoWanted: "Magneten op een koelkastdeur of metalen vlak, in de stijl van een van de knuffelprojecten",
   },
   {

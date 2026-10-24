@@ -71,7 +71,14 @@ export default function KnuffelsPage() {
               ))}
             </ul>
           </div>
-          <PhotoSlot tone="sky" ratio="4-5" wanted="Eén knuffel vrijgesteld op een lichte achtergrond, schuin van voren" sizes="(max-width: 900px) 100vw, 560px" />
+          {/* TODO: IMAGE ASSET NEEDED — tijdelijk voorbeeldbeeld (met Parkmade-logo); vervangen door een eigen foto van één knuffel op een lichte achtergrond. */}
+          <PhotoSlot
+            src="/beeld/knuffel-groen-voorbeeld.webp"
+            alt="Groene pluche knuffel met gele details (voorbeeldbeeld)"
+            ratio="1-1"
+            wanted="Eén knuffel vrijgesteld op een lichte achtergrond, schuin van voren"
+            sizes="(max-width: 900px) 100vw, 560px"
+          />
         </div>
       </section>
 

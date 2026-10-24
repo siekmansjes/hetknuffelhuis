@@ -409,6 +409,33 @@ a:hover {
 .brand:hover {
   color: var(--ink);
 }
+.logo-mark {
+  height: 58px;
+  width: auto;
+  mix-blend-mode: multiply;
+}
+.logo-wordmark {
+  height: 28px;
+  width: auto;
+  mix-blend-mode: multiply;
+}
+@media (max-width: 420px) {
+  .logo-wordmark {
+    height: 22px;
+  }
+  .logo-mark {
+    height: 48px;
+  }
+}
+.footer-logo {
+  align-self: flex-start;
+  background: var(--paper);
+  padding: 16px 20px;
+}
+.logo-full {
+  display: block;
+  mix-blend-mode: multiply;
+}
 .brand-name {
   white-space: nowrap;
   font-family: var(--font-display);

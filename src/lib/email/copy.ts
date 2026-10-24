@@ -24,12 +24,12 @@ export const EMAIL_SIGNOFF = "Met vriendelijke groeten,";
 
 /** De handtekening onder elke mail. Regels met `href` worden een link. */
 export const EMAIL_SIGNATURE = {
-  // TODO: zet hier de URL van een PNG-logo (bv. `${SITE_URL}/email/logo.png`) zodra dat bestaat;
-  // WebP/SVG worden niet door alle mailprogramma's getoond. Leeg = geen logo.
-  logoUrl: "",
+  // PNG: WebP/SVG worden niet door alle mailprogramma's getoond. Werkt pas voor
+  // ontvangers als SITE_URL het echte (publieke) domein is.
+  logoUrl: `${SITE_URL}/email/logo.png`,
   logoAlt: "Het Knuffelhuis",
-  logoWidth: 96,
-  logoHeight: 96,
+  logoWidth: 140,
+  logoHeight: 85,
   lines: [
     { text: "Het Knuffelhuis", bold: true },
     ...(COMPANY.phoneDisplay ? [{ text: COMPANY.phoneDisplay, href: `tel:+${COMPANY.phoneInternational}` }] : []),
