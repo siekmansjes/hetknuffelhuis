@@ -721,11 +721,7 @@ a:hover {
 }
 @media (min-width: 900px) {
   .cases-grid {
-    grid-template-columns: 1.25fr 1fr;
-    grid-template-rows: auto auto;
-  }
-  .cases-grid .case-card:first-child {
-    grid-row: 1 / span 2;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .case-card {
@@ -764,14 +760,42 @@ a:hover {
 }
 .cases-grid--wide {
   display: grid;
-  gap: clamp(32px, 4vw, 56px) clamp(20px, 3vw, 36px);
+  gap: clamp(32px, 4vw, 48px) clamp(20px, 3vw, 36px);
 }
-@media (min-width: 760px) {
+@media (min-width: 900px) {
   .cases-grid--wide {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-  .cases-grid--wide .case-card:first-child {
-    grid-column: 1 / -1;
+}
+
+/* Op smallere schermen staan de cases als compacte rij: klein beeld naast de tekst. */
+@media (max-width: 899px) {
+  .case-card {
+    display: grid;
+    grid-template-columns: minmax(150px, 34%) 1fr;
+    column-gap: 22px;
+    row-gap: 10px;
+    align-items: start;
+    align-content: start;
+  }
+  .case-card .case-media {
+    grid-row: 1 / span 4;
+    grid-column: 1;
+  }
+  .case-card > :not(.case-media) {
+    grid-column: 2;
+  }
+}
+@media (max-width: 519px) {
+  .case-card {
+    grid-template-columns: 1fr;
+  }
+  .case-card .case-media {
+    grid-row: auto;
+    max-width: 280px;
+  }
+  .case-card > :not(.case-media) {
+    grid-column: 1;
   }
 }
 

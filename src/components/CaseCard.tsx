@@ -8,7 +8,7 @@ export function CaseCard({ item, priority = false, large = false }: { item: Case
     <Link href={`/cases/${item.slug}`} className="case-card">
       <div className="case-media">
         {item.image ? (
-          <div className="frame ratio-4-3" style={{ position: "relative" }}>
+          <div className="frame ratio-16-10" style={{ position: "relative" }}>
             <Image
               src={item.image}
               alt={item.imageAlt ?? ""}
@@ -21,7 +21,7 @@ export function CaseCard({ item, priority = false, large = false }: { item: Case
         ) : (
           <PhotoSlot
             tone={item.tone}
-            ratio={large ? "4-5" : "4-3"}
+            ratio="16-10"
             wanted="Hoofdfoto van de knuffel uit dit project"
           />
         )}
