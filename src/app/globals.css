@@ -9,14 +9,14 @@
  */
 :root {
   --paper: oklch(99.6% 0.003 90);
-  --tint: oklch(97.6% 0.013 88); /* warm crème: vlakken en kaarten */
-  --aqua: oklch(94.2% 0.026 85); /* iets dieper zand: hover, blob */
+  --tint: #fbf8f1; /* crème van Bellus Concepts: vlakken en kaarten */
+  --aqua: oklch(95.4% 0.014 88); /* iets dieper crème: hover, cirkel */
   --teal: oklch(72% 0.09 188); /* middelteal: tekeningen, accenten */
   --surface: oklch(100% 0 0);
   --ink: oklch(31% 0.05 205);
   --ink-soft: oklch(43% 0.035 200);
-  --line: oklch(90% 0.014 85);
-  --rule: oklch(87% 0.02 85); /* haarlijn tussen rijen en secties */
+  --line: oklch(91.5% 0.01 85);
+  --rule: oklch(89% 0.012 85); /* haarlijn tussen rijen en secties */
   --line-strong: oklch(60% 0.025 85); /* veld- en keuzerand (3:1 of meer) */
   --frame-line: oklch(29% 0.045 205 / 0.16); /* dunne rand om foto's */
 
