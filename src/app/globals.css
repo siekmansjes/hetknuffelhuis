@@ -1062,6 +1062,31 @@ main {
   color: var(--ink-soft);
 }
 
+/* Lijst met haarlijnen tussen de regels (bv. "Waarom kiezen klanten ..."). */
+.check-list--ruled {
+  gap: 0;
+}
+.check-list--ruled li {
+  padding: 14px 0 14px 32px;
+  border-top: 1px solid var(--rule);
+}
+.check-list--ruled li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.check-list--ruled li::before {
+  top: 1.15em;
+}
+@media (min-width: 760px) {
+  .check-list--cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(32px, 5vw, 72px);
+  }
+  .check-list--cols li:nth-last-child(2) {
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
 /* ---------- Werkwijze ---------- */
 
 .steps {

@@ -60,6 +60,8 @@ logo het enige groen zijn.
   (`src/lib/faq.ts`, `src/lib/process.ts`), kledingopties voor samples
   (`SAMPLE_TYPES` in `src/lib/validation/forms.ts`), en minimale aantallen en
   levertijden voor merchandise (staan bewust niet op de site).
+- **"Waarom kiezen klanten voor Het Knuffelhuis?"** (home, `src/app/page.tsx`): overgenomen van de
+  Parkmade-site zonder displaypunt; bevestig of alle punten kloppen, vooral CE, EN 71 en GPSR.
 - **Bevestigingsmail**: Resend-sleutel + verzonden afzenderadres, en een PNG-logo
   voor de handtekening (`src/lib/email/copy.ts`).
 - Google Analytics is optioneel: zonder `NEXT_PUBLIC_GA_MEASUREMENT_ID` geen

@@ -17,6 +17,18 @@ const DETAILS = [
   { title: "Veilig voor iedereen", text: "Gemaakt en getest volgens de geldende EU-normen, veilig voor alle leeftijden." },
 ];
 
+// Waarom klanten kiezen voor Het Knuffelhuis. Overgenomen van de Parkmade-site
+// (localhost:3100) zonder het displaypunt. TODO: bevestig of alle punten kloppen
+// voor Het Knuffelhuis, vooral de keurmerken (CE, EN 71, GPSR).
+const WHY = [
+  "Eén aanspreekpunt, van eerste idee tot levering",
+  "Eén bestelling voor je hele assortiment",
+  "Exclusief ontwerp, nergens anders verkrijgbaar",
+  "Ervaren designers die meedenken als je zelf geen ontwerp hebt",
+  "Vaste producenten die hun kwaliteit al bewezen hebben",
+  "CE, EN 71 en GPSR-compliant, met traceerbare documentatie",
+];
+
 export default function Home() {
   return (
     <>
@@ -126,6 +138,20 @@ export default function Home() {
               </Link>
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Waarom kiezen klanten voor Het Knuffelhuis */}
+      <section id="waarom" className="section section--deep" aria-labelledby="why-title">
+        <div className="wrap">
+          <div className="section-head">
+            <h2 id="why-title">Waarom kiezen klanten voor Het Knuffelhuis?</h2>
+          </div>
+          <ul className="check-list check-list--ruled check-list--cols">
+            {WHY.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       </section>
 

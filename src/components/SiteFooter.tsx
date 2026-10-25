@@ -30,6 +30,7 @@ export function SiteFooter() {
             <Link href="/knuffels">Knuffels op maat</Link>
             <Link href="/cases">Cases</Link>
             <Link href="/werkwijze">Werkwijze</Link>
+            <Link href="/#waarom">Waarom Het Knuffelhuis</Link>
             <Link href="/faq">Veelgestelde vragen</Link>
           </div>
 
