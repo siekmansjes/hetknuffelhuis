@@ -4,6 +4,10 @@
 export function Doodles() {
   return (
     <div className="doodles" aria-hidden="true">
+      <span className="dot dot--a" />
+      <span className="dot dot--b" />
+      <span className="dot dot--c" />
+      <span className="dot dot--d" />
       <svg className="doodle doodle--star" viewBox="0 0 48 48" fill="none">
         <path d="M24 5l5 12.5 13 1-10 8.6 3.2 13L24 33l-11.2 7.1 3.2-13L6 18.5l13-1z" fill="var(--spot)" stroke="var(--ink)" strokeWidth="2" strokeLinejoin="round" />
       </svg>

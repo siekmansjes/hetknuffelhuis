@@ -34,7 +34,7 @@ Google Analytics en het domein.
 ## Uitstraling
 
 Fris en speels-zakelijk, geïnspireerd op plushtoysfactory.eu en bellusconcepts.com
-(zonder hun lettertypes of roze knoppen): wit papier, neutrale lichtgrijze vlakken en
+(zonder hun lettertypes of roze knoppen): wit papier, warme crème vlakken en
 teal als actiekleur voor knoppen, getekende lijn-icoontjes in ronde
 badges, golfranden tussen secties, een organische hero-blob met gestikte rand,
 zwevende doodles, scroll-reveal, een gekantelde afsluitkaart en
