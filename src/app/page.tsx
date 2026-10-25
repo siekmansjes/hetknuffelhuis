@@ -3,7 +3,7 @@ import Image from "next/image";
 import { CaseCard } from "@/components/CaseCard";
 import { CountUp } from "@/components/CountUp";
 import { CtaBlock } from "@/components/CtaBlock";
-import { Doodles, Wave } from "@/components/Decor";
+import { Wave } from "@/components/Decor";
 import { Faq } from "@/components/Faq";
 import { IconBadge, type IconName } from "@/components/Icon";
 import { PhotoSlot } from "@/components/PhotoSlot";
@@ -85,7 +85,6 @@ export default function Home() {
               priority
               sizes="(max-width: 900px) 90vw, 500px"
             />
-            <Doodles />
           </div>
         </div>
       </section>
