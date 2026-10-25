@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CtaBlock } from "@/components/CtaBlock";
+import { Wave } from "@/components/Decor";
+import { IconBadge, type IconName } from "@/components/Icon";
+import { Reveal } from "@/components/Reveal";
 import { steps } from "@/lib/process";
+
+const STEP_ICONS: IconName[] = ["chat", "match", "check", "truck"];
 import { PLUSH_MINIMUM, buildPageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -34,17 +39,20 @@ export default function WerkwijzePage() {
       <section className="section section--tight">
         <div className="wrap">
           <ol className="steps steps--light">
-            {steps.map((step) => (
-              <li key={step.title} className="step">
+            {steps.map((step, i) => (
+              <Reveal as="li" key={step.title} className="step" delay={i * 110}>
+                <IconBadge name={STEP_ICONS[i]} size={30} />
+                <span className="step-label">Stap {i + 1}</span>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
-              </li>
+              </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="section section--deep" aria-labelledby="needed-title">
+      <section className="section section--tint section--wave" aria-labelledby="needed-title">
+        <Wave from="paper" />
         <div className="wrap two-col">
           <div className="section-head" style={{ marginBottom: 0 }}>
             <h2 id="needed-title">

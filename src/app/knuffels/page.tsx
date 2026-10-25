@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CtaBlock } from "@/components/CtaBlock";
 import { JsonLd } from "@/components/JsonLd";
 import { CaseCard } from "@/components/CaseCard";
+import { Wave } from "@/components/Decor";
+import { IconBadge, type IconName } from "@/components/Icon";
 import { PhotoSlot } from "@/components/PhotoSlot";
 import { cases } from "@/lib/cases";
 import { PLUSH_MINIMUM, SITE_NAME, SITE_URL, buildPageMetadata } from "@/lib/site";
@@ -15,10 +17,10 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 const OPTIONS = [
-  { title: "Vorm en formaat", text: "We bouwen jouw karakter of ontwerp na, tot in het kleinste detail. Het formaat bepaal je zelf." },
-  { title: "Kleur en materiaal", text: "Meestal soft velboa of pluche. We kiezen samen de stof en kleuren die bij het karakter passen." },
-  { title: "Details en borduurwerk", text: "Gezichten, logo’s en andere details worden geborduurd, zodat ze scherp blijven en goed tegen knuffelen kunnen." },
-  { title: "Label en hangtag", text: "Compleet afgewerkt met een waslabel en een hangtag naar jouw eigen ontwerp." },
+  { icon: "match" as IconName, title: "Vorm en formaat", text: "We bouwen jouw karakter of ontwerp na, tot in het kleinste detail. Het formaat bepaal je zelf." },
+  { icon: "fabric" as IconName, title: "Kleur en materiaal", text: "Meestal soft velboa of pluche. We kiezen samen de stof en kleuren die bij het karakter passen." },
+  { icon: "needle" as IconName, title: "Details en borduurwerk", text: "Gezichten, logo’s en andere details worden geborduurd, zodat ze scherp blijven en goed tegen knuffelen kunnen." },
+  { icon: "tag" as IconName, title: "Label en hangtag", text: "Compleet afgewerkt met een waslabel en een hangtag naar jouw eigen ontwerp." },
 ];
 
 export default function KnuffelsPage() {
@@ -61,9 +63,10 @@ export default function KnuffelsPage() {
             <h2>
               Alles aan je knuffel is <em>jouw keuze</em>
             </h2>
-            <ul className="detail-list">
+            <ul className="detail-list detail-list--icons">
               {OPTIONS.map((option) => (
                 <li key={option.title}>
+                  <IconBadge name={option.icon} size={24} tone="soft" />
                   <strong>{option.title}</strong>
                   <span>{option.text}</span>
                 </li>
@@ -81,7 +84,8 @@ export default function KnuffelsPage() {
         </div>
       </section>
 
-      <section className="section section--deep" aria-labelledby="specs-title">
+      <section className="section section--tint section--wave" aria-labelledby="specs-title">
+        <Wave from="paper" />
         <div className="wrap two-col">
           <div className="section-head" style={{ marginBottom: 0 }}>
             <h2 id="specs-title">

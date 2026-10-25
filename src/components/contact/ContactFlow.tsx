@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { ContactForm } from "./ContactForm";
 import { OfferteForm } from "./OfferteForm";
 import { SampleForm } from "./SampleForm";
+import { IconBadge } from "@/components/Icon";
 import { COMPANY, whatsappUrl } from "@/lib/site";
 
 type Mode = "keuze" | "contact" | "offerte" | "samples";
@@ -37,16 +38,19 @@ export function ContactFlow({ initialMode }: { initialMode?: string }) {
 
       <div className="mode-grid">
         <button type="button" className="mode-card mode-card--primary" onClick={() => goTo("offerte")}>
+          <IconBadge name="sparkle" size={26} />
           <h2>Offerte aanvragen</h2>
           <p>Voor knuffels op maat of merchandise. Vertel wat je wilt laten maken en wij sturen je een offerte.</p>
           <span className="link-arrow">Start je aanvraag</span>
         </button>
         <button type="button" className="mode-card" onClick={() => goTo("samples")}>
+          <IconBadge name="shirt" size={26} />
           <h2>Kleding-sample</h2>
           <p>Zie en voel de kwaliteit van onze kleding en kies je maat.</p>
           <span className="link-arrow">Vraag een sample aan</span>
         </button>
         <button type="button" className="mode-card" onClick={() => goTo("contact")}>
+          <IconBadge name="chat" size={26} />
           <h2>Een vraag of bericht</h2>
           <p>Liever eerst even overleggen of iets vragen? Stuur ons een bericht.</p>
           <span className="link-arrow">Stuur een bericht</span>

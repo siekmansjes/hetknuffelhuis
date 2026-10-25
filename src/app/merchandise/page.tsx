@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CtaBlock } from "@/components/CtaBlock";
+import { IconBadge, type IconName } from "@/components/Icon";
 import { PhotoSlot } from "@/components/PhotoSlot";
+import { Reveal } from "@/components/Reveal";
 import { merchandise } from "@/lib/merchandise";
 import { buildPageMetadata } from "@/lib/site";
 
@@ -12,6 +14,14 @@ export const metadata: Metadata = buildPageMetadata({
     "Naast knuffels maakt Het Knuffelhuis sleutelhangers, tijdelijke tattoo’s, magneten, petjes en kleding op maat. Van kleding kun je een sample aanvragen om maat en kwaliteit te kiezen.",
   path: "/merchandise",
 });
+
+const MERCH_ICONS: Record<string, IconName> = {
+  sleutelhangers: "keyring",
+  "tijdelijke-tattoos": "tattoo",
+  magneten: "magnet",
+  petjes: "cap",
+  kleding: "shirt",
+};
 
 export default function MerchandisePage() {
   return (
@@ -38,7 +48,7 @@ export default function MerchandisePage() {
       <div className="wrap">
         {merchandise.map((item, i) => (
           <section key={item.slug} id={item.slug} className="merch-section" aria-labelledby={`${item.slug}-title`}>
-            <div className={`split ${i % 2 === 1 ? "split--flip" : ""}`}>
+            <Reveal className={`split ${i % 2 === 1 ? "split--flip" : ""}`}>
               <PhotoSlot
                 src={item.photo}
                 alt={item.photoAlt}
@@ -48,7 +58,10 @@ export default function MerchandisePage() {
                 sizes="(max-width: 900px) 100vw, 560px"
               />
               <div className="split-copy">
-                <h2 id={`${item.slug}-title`}>{item.name}</h2>
+                <div className="merch-title">
+                  <IconBadge name={MERCH_ICONS[item.slug] ?? "box"} size={28} />
+                  <h2 id={`${item.slug}-title`}>{item.name}</h2>
+                </div>
                 <p>{item.intro}</p>
                 <table className="spec-table">
                   <tbody>
@@ -84,7 +97,7 @@ export default function MerchandisePage() {
                   </div>
                 )}
               </div>
-            </div>
+            </Reveal>
           </section>
         ))}
       </div>

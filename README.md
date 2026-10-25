@@ -33,12 +33,14 @@ Google Analytics en het domein.
 
 ## Uitstraling
 
-Fris en warm: warm-wit papier, één koele lichtgrijze vlakkleur, diepe blauwe
-inkt en één gedempte staalblauwe actiekleur. Geen gradients of schaduwen;
-haarlijnen als scheiding en rechthoekige fotovakken met een dunne rand. Fonts:
-Outfit (koppen) en DM Sans (tekst). Alle tokens staan bovenin
-`src/app/globals.css`. Het logo is groen met een oranje giraf; de site laat het
-logo het enige groen zijn.
+Fris en speels-zakelijk, geïnspireerd op plushtoysfactory.eu en bellusconcepts.com
+(zonder hun lettertypes of roze knoppen): wit papier, een familie van aqua- en
+teal-tinten, één teal actiekleur voor knoppen, getekende lijn-icoontjes in ronde
+badges, golfranden tussen secties, een organische hero-blob met gestikte rand,
+zwevende doodles, een lopende band, scroll-reveal, een gekantelde afsluitkaart en
+tellertjes. Foto's blijven rechthoekig met een dunne rand. Alle beweging staat uit
+bij "minder beweging" (prefers-reduced-motion). Fonts: Outfit (koppen) en DM Sans
+(tekst). Tokens bovenin `src/app/globals.css`; iconen in `src/components/Icon.tsx`.
 
 ## Nog in te vullen (zoek op `TODO` en `[...]`)
 

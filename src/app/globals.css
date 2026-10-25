@@ -2,32 +2,36 @@
 
 /*
  * Design system Het Knuffelhuis
- * Richting: fris en warm. Warm-wit papier, één koele lichtgrijze tweede vlakkleur,
- * diepe blauwe inkt en één gedempte staalblauwe actiekleur. Geen gradients of
- * schaduwen; haarlijnen als scheiding, rechthoekige fotovakken met dunne rand.
+ * Richting: fris en speels-zakelijk. Wit papier, een familie van aqua- en
+ * teal-tinten voor vlakken en tekeningen, diepe teal-inkt en één diepteal
+ * actiekleur voor knoppen. Organische vormen (blob, golfranden) en getekende
+ * lijn-icoontjes geven beweging; foto's blijven rechthoekig met een dunne rand.
  */
 :root {
-  --paper: oklch(99% 0.006 90);
-  --tint: oklch(96.5% 0.006 255); /* enige tweede vlakkleur */
+  --paper: oklch(99.3% 0.004 195);
+  --tint: oklch(95.2% 0.03 192); /* lichte aqua: vlakken */
+  --aqua: oklch(91.5% 0.05 190); /* iets dieper aqua: kaarten, blob */
+  --teal: oklch(72% 0.09 188); /* middelteal: tekeningen, accenten */
   --surface: oklch(100% 0 0);
-  --ink: oklch(26% 0.045 255);
-  --ink-soft: oklch(42% 0.03 255);
-  --line: oklch(90% 0.008 255); /* decoratieve vlakranden */
-  --rule: oklch(86% 0.01 255); /* haarlijn tussen rijen en secties */
-  --line-strong: oklch(58% 0.025 255); /* veld- en keuzerand (3:1 of meer) */
-  --frame-line: oklch(26% 0.045 255 / 0.16); /* dunne rand om foto's */
+  --ink: oklch(31% 0.05 205);
+  --ink-soft: oklch(43% 0.035 200);
+  --line: oklch(90% 0.02 195);
+  --rule: oklch(86% 0.03 195); /* haarlijn tussen rijen en secties */
+  --line-strong: oklch(58% 0.04 195); /* veld- en keuzerand (3:1 of meer) */
+  --frame-line: oklch(29% 0.045 205 / 0.16); /* dunne rand om foto's */
 
-  /* Eén actiekleur. --accent voor vlakken/knoppen (wit erop = 6,9:1),
-     --accent-text voor kleine tekst in die kleur op papier. */
-  --accent: oklch(46% 0.085 255);
-  --accent-hover: oklch(39% 0.08 255);
-  --accent-text: oklch(43% 0.09 255);
-  --on-accent: oklch(99% 0.005 90);
+  /* Eén actiekleur voor knoppen: teal (wit erop = 5:1). */
+  --accent: oklch(51% 0.095 188);
+  --accent-hover: oklch(43% 0.09 190);
+  --accent-text: oklch(45% 0.095 190);
+  --on-accent: oklch(99% 0.004 195);
+  /* Warm detail uit het logo (de giraf): alleen voor kleine tekeningen. */
+  --spot: oklch(78% 0.13 65);
 
-  --night: oklch(25% 0.045 255);
-  --on-night: oklch(98% 0.006 255);
-  --on-night-soft: oklch(82% 0.02 255);
-  --on-night-accent: oklch(84% 0.05 255);
+  --night: oklch(52% 0.095 188); /* teal-band met witte tekst (4,7:1) */
+  --on-night: oklch(99% 0.004 195);
+  --on-night-soft: oklch(94% 0.03 192);
+  --on-night-accent: oklch(93% 0.07 188);
   --danger: oklch(46% 0.17 28);
 
   /* Aliassen: bestaande classes en tone-props blijven werken. */
@@ -205,6 +209,7 @@ main {
 }
 
 .section {
+  position: relative;
   padding-top: var(--section-y);
   padding-bottom: var(--section-y);
 }
@@ -213,6 +218,7 @@ main {
   padding-bottom: calc(var(--section-y) * 0.6);
 }
 .section--deep,
+.section--tint,
 .section--sky,
 .section--iris,
 .section--lilac {
@@ -735,35 +741,6 @@ main {
   min-height: 0;
 }
 
-/* ---------- Feitenstrook ---------- */
-
-.facts {
-  display: grid;
-  gap: 28px 40px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 900px) {
-  .facts {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .facts > div + div {
-    border-left: 1px solid var(--rule);
-    padding-left: 40px;
-  }
-}
-.fact-figure {
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 1.2vw + 1rem, 1.75rem);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-.fact-text {
-  margin-top: 6px;
-  color: var(--ink-soft);
-  font-size: 0.975rem;
-}
-
 /* ---------- Cases ---------- */
 
 .cases-grid {
@@ -792,7 +769,7 @@ main {
   transition: transform 0.25s var(--ease);
 }
 .case-card:hover .case-media {
-  transform: translateY(-4px);
+  transform: translateY(-6px) rotate(-0.6deg);
 }
 .case-card h3 {
   font-size: clamp(1.15rem, 0.4vw + 1.05rem, 1.35rem);
@@ -1612,6 +1589,507 @@ fieldset.field {
 @media (max-width: 899px) {
   .hero-grid .frame {
     max-width: 560px;
+  }
+}
+
+/* ---------- Dynamiek en tekeningen ---------- */
+
+/* Scroll-reveal: blokken die nog buiten beeld staan komen zacht omhoog. */
+.reveal {
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal.is-armed:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+
+/* Golfrand bovenaan een sectie, in de kleur van het blok erboven. */
+.wave {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: clamp(28px, 4.5vw, 64px);
+  pointer-events: none;
+}
+.wave--paper {
+  color: var(--paper);
+}
+.wave--tint {
+  color: var(--tint);
+}
+.wave--night {
+  color: var(--night);
+}
+.section--wave {
+  padding-top: calc(var(--section-y) + 24px);
+}
+
+/* Hero: organische blob met gestikte rand, zwevende knuffels en doodles. */
+.hero {
+  overflow-x: clip;
+}
+.hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+  aspect-ratio: 1 / 0.92;
+  display: grid;
+  place-items: center;
+}
+.blob {
+  position: absolute;
+  border-radius: 58% 42% 55% 45% / 52% 46% 54% 48%;
+  animation: blob-morph 14s ease-in-out infinite alternate;
+}
+.blob--fill {
+  inset: 3% 1%;
+  background: var(--aqua);
+}
+.blob--stitch {
+  inset: calc(3% + 12px) calc(1% + 12px);
+  border: 2px dashed oklch(100% 0 0 / 0.95);
+}
+@keyframes blob-morph {
+  0% {
+    border-radius: 58% 42% 55% 45% / 52% 46% 54% 48%;
+  }
+  50% {
+    border-radius: 44% 56% 42% 58% / 58% 42% 58% 42%;
+  }
+  100% {
+    border-radius: 52% 48% 62% 38% / 44% 56% 46% 54%;
+  }
+}
+.hero-photo {
+  position: relative;
+  width: 88%;
+  height: auto;
+  mix-blend-mode: multiply;
+  animation: float 7s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.8deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.8deg);
+  }
+}
+.doodles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.doodle {
+  position: absolute;
+  animation: float 6s ease-in-out infinite;
+}
+.doodle--star {
+  top: 2%;
+  left: 4%;
+  width: 46px;
+}
+.doodle--heart {
+  bottom: 8%;
+  right: 3%;
+  width: 40px;
+  animation-delay: -2s;
+}
+.doodle--stitch {
+  top: 10%;
+  right: 6%;
+  width: 72px;
+  animation-delay: -1s;
+}
+.doodle--plus {
+  bottom: 18%;
+  left: 0;
+  width: 28px;
+  animation-delay: -3s;
+}
+@media (max-width: 560px) {
+  .doodle--stitch,
+  .doodle--plus {
+    display: none;
+  }
+}
+
+/* Primaire knop met zacht golfje, voor de belangrijkste actie. */
+.btn-ripple {
+  position: relative;
+}
+.btn-ripple::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: ripple 3.2s ease-out infinite;
+}
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(1.14, 1.45);
+    opacity: 0;
+  }
+}
+
+/* Lopende band met wat we maken. */
+.marquee {
+  background: var(--night);
+  color: var(--on-night);
+  overflow: hidden;
+  padding: 18px 0;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-right: 32px;
+}
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 1vw + 0.9rem, 1.5rem);
+  white-space: nowrap;
+}
+.marquee-item svg {
+  color: var(--on-night-accent);
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+  .marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* Iconen in een rond vlak. */
+.icon-badge {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: transform 0.35s var(--ease);
+}
+.icon-badge--deep {
+  background: var(--night);
+  color: var(--on-night);
+}
+.icon-badge--soft {
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--rule);
+}
+.section--night .icon-badge--deep {
+  background: var(--surface);
+  color: var(--night);
+}
+
+/* Iconenkaarten: rond icoon dat over de bovenrand steekt. */
+.feature-grid {
+  display: grid;
+  gap: 56px 24px;
+  padding-top: 32px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1020px) {
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.feature-card {
+  position: relative;
+  background: var(--tint);
+  border-radius: var(--radius-lg);
+  padding: 56px 24px 28px;
+  text-align: center;
+  transition: transform 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.feature-card .icon-badge {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 72px;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  background: var(--aqua);
+}
+.feature-card:hover .icon-badge {
+  transform: translateX(-50%) rotate(-10deg) scale(1.08);
+}
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.feature-card p {
+  color: var(--ink-soft);
+  font-size: 0.975rem;
+}
+.feature-figure {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent-text);
+}
+
+/* Lijsten met icoon: details en redenen. */
+.detail-list.detail-list--icons li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 2px 20px;
+  align-items: start;
+  padding: 18px 0;
+}
+.detail-list--icons .icon-badge {
+  width: 52px;
+  height: 52px;
+  grid-row: 1 / span 2;
+}
+.detail-list--icons li:hover .icon-badge {
+  transform: rotate(-10deg) scale(1.06);
+}
+.why-grid {
+  display: grid;
+  gap: 8px 48px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.why-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--rule);
+  font-weight: 500;
+}
+.why-item .icon-badge {
+  width: 52px;
+  height: 52px;
+}
+.why-item:hover .icon-badge {
+  transform: rotate(-10deg) scale(1.06);
+}
+.section--tint-card .why-item {
+  border-color: oklch(100% 0 0 / 0.7);
+}
+
+/* Werkwijze: stappen met icoon en lopende lijn. */
+.steps {
+  counter-reset: none;
+}
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 0;
+  border-top: 0;
+}
+.step::before {
+  content: none;
+}
+.step .icon-badge {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 10px;
+}
+.step:hover .icon-badge {
+  transform: rotate(-10deg) scale(1.06);
+}
+.step-label {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-night-accent);
+}
+.steps--light .step-label {
+  color: var(--accent-text);
+}
+@media (min-width: 900px) {
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 84px;
+    right: -20px;
+    height: 2px;
+    background: oklch(100% 0 0 / 0.4);
+    transform-origin: left;
+  }
+  .steps--light .step:not(:last-child)::after {
+    background: var(--rule);
+  }
+}
+.steps--light .step .icon-badge--deep {
+  background: var(--night);
+  color: var(--on-night);
+}
+
+/* Merchandise-rijen met icoon. */
+.merch-row {
+  align-items: center;
+  transition: background-color 0.25s var(--ease), padding 0.25s var(--ease);
+}
+@media (min-width: 760px) {
+  .merch-row {
+    grid-template-columns: 64px 240px 1fr auto;
+    column-gap: 24px;
+  }
+}
+.merch-row:hover {
+  background: var(--aqua);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.merch-row:hover .icon-badge {
+  transform: rotate(-10deg) scale(1.08);
+}
+.merch-row .icon-badge {
+  width: 56px;
+  height: 56px;
+}
+
+.mode-card .icon-badge {
+  width: 56px;
+  height: 56px;
+}
+.mode-card:hover .icon-badge {
+  transform: rotate(-10deg) scale(1.08);
+}
+.mode-card.mode-card--primary .icon-badge {
+  background: var(--surface);
+  color: var(--ink);
+}
+.callout .icon-badge {
+  width: 72px;
+  height: 72px;
+}
+
+/* Zachte, langzaam bewegende blob rechtsboven in de paginakop. */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -90px;
+  width: clamp(220px, 32vw, 420px);
+  aspect-ratio: 1;
+  background: var(--tint);
+  border-radius: 58% 42% 55% 45% / 52% 46% 54% 48%;
+  animation: blob-morph 16s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.page-hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+.merch-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.merch-title .icon-badge {
+  width: 56px;
+  height: 56px;
+}
+
+/* Gekantelde kaart (afsluitende call-to-action), met twee punaises. */
+.cta-section {
+  padding-top: calc(var(--section-y) * 0.5);
+}
+.tilt-card {
+  position: relative;
+  background: var(--night);
+  color: var(--on-night);
+  border-radius: 22px;
+  padding: clamp(32px, 5vw, 64px);
+  transform: rotate(-1.2deg);
+  transition: opacity 0.7s var(--ease), transform 0.5s var(--ease);
+}
+.tilt-card.is-visible:hover,
+.tilt-card:hover {
+  transform: rotate(0deg);
+}
+.tilt-card::before,
+.tilt-card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: oklch(100% 0 0 / 0.35);
+}
+.tilt-card::before {
+  top: 16px;
+  right: 18px;
+}
+.tilt-card::after {
+  bottom: 16px;
+  left: 18px;
+}
+.tilt-card h2 {
+  color: var(--on-night);
+}
+.tilt-card .btn-primary {
+  background: var(--surface);
+  color: var(--ink);
+}
+.tilt-card .btn-primary:hover {
+  background: var(--tint);
+  color: var(--ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card {
+    transform: none;
   }
 }
 
