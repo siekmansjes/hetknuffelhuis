@@ -5,7 +5,7 @@ import { CountUp } from "@/components/CountUp";
 import { CtaBlock } from "@/components/CtaBlock";
 import { Doodles, Wave } from "@/components/Decor";
 import { Faq } from "@/components/Faq";
-import { Icon, IconBadge, type IconName } from "@/components/Icon";
+import { IconBadge, type IconName } from "@/components/Icon";
 import { PhotoSlot } from "@/components/PhotoSlot";
 import { Reveal } from "@/components/Reveal";
 import { cases } from "@/lib/cases";
@@ -13,8 +13,6 @@ import { faqs } from "@/lib/faq";
 import { merchandise } from "@/lib/merchandise";
 import { steps } from "@/lib/process";
 import { PLUSH_MINIMUM } from "@/lib/site";
-
-const MARQUEE = ["Knuffels op maat", "Sleutelhangers", "Tijdelijke tattoo’s", "Magneten", "Petjes", "Kleding"];
 
 const FEATURES: { icon: IconName; title: string; text: string; figure?: boolean }[] = [
   { icon: "match", title: "1:1 naar jouw ontwerp", text: "Vorm, verhoudingen, kleuren en details precies zoals jouw merk of karakter." },
@@ -91,22 +89,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Lopende band */}
-      <div className="marquee" aria-label="Wat we maken">
-        <div className="marquee-track">
-          {[0, 1].map((group) => (
-            <div key={group} className="marquee-group" aria-hidden={group === 1 ? "true" : undefined}>
-              {MARQUEE.map((item) => (
-                <span key={item} className="marquee-item">
-                  {item}
-                  <Icon name="sparkle" size={20} />
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Kort samengevat */}
       <section className="section section--tight" aria-labelledby="features-title">

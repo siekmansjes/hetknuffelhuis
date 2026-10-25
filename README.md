@@ -34,10 +34,10 @@ Google Analytics en het domein.
 ## Uitstraling
 
 Fris en speels-zakelijk, geïnspireerd op plushtoysfactory.eu en bellusconcepts.com
-(zonder hun lettertypes of roze knoppen): wit papier, een familie van aqua- en
-teal-tinten, één teal actiekleur voor knoppen, getekende lijn-icoontjes in ronde
+(zonder hun lettertypes of roze knoppen): wit papier, neutrale lichtgrijze vlakken en
+teal als actiekleur voor knoppen, getekende lijn-icoontjes in ronde
 badges, golfranden tussen secties, een organische hero-blob met gestikte rand,
-zwevende doodles, een lopende band, scroll-reveal, een gekantelde afsluitkaart en
+zwevende doodles, scroll-reveal, een gekantelde afsluitkaart en
 tellertjes. Foto's blijven rechthoekig met een dunne rand. Alle beweging staat uit
 bij "minder beweging" (prefers-reduced-motion). Fonts: Outfit (koppen) en DM Sans
 (tekst). Tokens bovenin `src/app/globals.css`; iconen in `src/components/Icon.tsx`.
