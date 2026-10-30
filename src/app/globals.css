@@ -28,7 +28,7 @@
   /* Warm detail uit het logo (de giraf): alleen voor kleine tekeningen. */
   --spot: oklch(78% 0.13 65);
 
-  --night: oklch(52% 0.095 188); /* teal-band met witte tekst (4,7:1) */
+  --night: oklch(49% 0.095 188); /* teal-band met witte tekst (5,5:1) */
   --on-night: oklch(99% 0.004 195);
   --on-night-soft: oklch(94% 0.03 192);
   --on-night-accent: oklch(93% 0.07 188);
@@ -155,12 +155,8 @@ a:hover {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
-.section--accent :focus-visible {
-  outline-color: var(--on-accent);
-}
 .section--night :focus-visible,
-.cookie-bar :focus-visible,
-.site-footer--dark :focus-visible {
+.cookie-bar :focus-visible {
   outline-color: var(--on-night-accent);
 }
 
@@ -218,15 +214,8 @@ main {
   padding-bottom: calc(var(--section-y) * 0.6);
 }
 .section--deep,
-.section--tint,
-.section--sky,
-.section--iris,
-.section--lilac {
+.section--tint {
   background: var(--tint);
-}
-.section--ruled {
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
 }
 .section--night {
   background: var(--night);
@@ -238,13 +227,6 @@ main {
 }
 .section--night a:not(.btn) {
   color: var(--on-night-accent);
-}
-.section--accent {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-.section--accent h2 {
-  color: var(--on-accent);
 }
 
 .section-head {
@@ -373,14 +355,6 @@ main {
 .section--night .btn-secondary:hover {
   background: var(--on-night);
   color: var(--night);
-}
-.section--accent .btn-primary {
-  background: var(--paper);
-  color: var(--ink);
-}
-.section--accent .btn-primary:hover {
-  background: var(--tint);
-  color: var(--ink);
 }
 .btn:disabled,
 .btn:disabled:hover {
@@ -1039,30 +1013,6 @@ main {
   color: var(--ink-soft);
 }
 
-/* Lijst met haarlijnen tussen de regels (bv. "Waarom kiezen klanten ..."). */
-.check-list--ruled {
-  gap: 0;
-}
-.check-list--ruled li {
-  padding: 14px 0 14px 32px;
-  border-top: 1px solid var(--rule);
-}
-.check-list--ruled li:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-.check-list--ruled li::before {
-  top: 1.15em;
-}
-@media (min-width: 760px) {
-  .check-list--cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: clamp(32px, 5vw, 72px);
-  }
-  .check-list--cols li:nth-last-child(2) {
-    border-bottom: 1px solid var(--rule);
-  }
-}
 
 /* ---------- Werkwijze ---------- */
 
@@ -1331,8 +1281,7 @@ legend.label {
   color: var(--accent-text);
 }
 .input,
-.textarea,
-.select {
+.textarea {
   width: 100%;
   min-height: 48px;
   padding: 10px 14px;
@@ -1355,13 +1304,11 @@ legend.label {
   line-height: 1.55;
 }
 .input:hover,
-.textarea:hover,
-.select:hover {
+.textarea:hover {
   border-color: var(--ink-soft);
 }
 .input:focus-visible,
-.textarea:focus-visible,
-.select:focus-visible {
+.textarea:focus-visible {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px oklch(46% 0.085 255 / 0.22);
@@ -1815,9 +1762,6 @@ fieldset.field {
 }
 .why-item:hover .icon-badge {
   transform: rotate(-10deg) scale(1.06);
-}
-.section--tint-card .why-item {
-  border-color: oklch(100% 0 0 / 0.7);
 }
 
 /* Werkwijze: stappen met icoon en lopende lijn. */

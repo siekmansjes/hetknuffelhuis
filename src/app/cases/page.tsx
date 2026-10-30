@@ -31,7 +31,7 @@ export default function CasesPage() {
         <div className="wrap">
           <div className="cases-grid--wide">
             {cases.map((item, i) => (
-              <CaseCard key={item.slug} item={item} large={false} priority={i === 0} />
+              <CaseCard key={item.slug} item={item} priority={i === 0} />
             ))}
           </div>
         </div>

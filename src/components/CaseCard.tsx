@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { CaseStudy } from "@/lib/cases";
 import { PhotoSlot } from "@/components/PhotoSlot";
 
-export function CaseCard({ item, priority = false, large = false }: { item: CaseStudy; priority?: boolean; large?: boolean }) {
+export function CaseCard({ item, priority = false }: { item: CaseStudy; priority?: boolean }) {
   return (
     <Link href={`/cases/${item.slug}`} className="case-card">
       <div className="case-media">
@@ -13,7 +13,7 @@ export function CaseCard({ item, priority = false, large = false }: { item: Case
               src={item.image}
               alt={item.imageAlt ?? ""}
               fill
-              sizes={large ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 480px"}
+              sizes="(max-width: 900px) 100vw, 480px"
               priority={priority}
               style={{ objectFit: "cover" }}
             />
