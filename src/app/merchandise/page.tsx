@@ -3,9 +3,11 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CtaBlock } from "@/components/CtaBlock";
 import { IconBadge, type IconName } from "@/components/Icon";
+import { MerchPrices } from "@/components/MerchPrices";
 import { PhotoSlot } from "@/components/PhotoSlot";
 import { Reveal } from "@/components/Reveal";
 import { merchandise } from "@/lib/merchandise";
+import { merchPrices } from "@/lib/merchandisePrices";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -65,6 +67,10 @@ export default function MerchandisePage() {
                 <p>{item.intro}</p>
                 <table className="spec-table">
                   <tbody>
+                    <tr>
+                      <th scope="row">Minimale afname</th>
+                      <td>{Math.min(...item.priceIds.map((id) => merchPrices[id].min))} stuks</td>
+                    </tr>
                     {item.specs.map((spec) => (
                       <tr key={spec.label}>
                         <th scope="row">{spec.label}</th>
@@ -73,6 +79,7 @@ export default function MerchandisePage() {
                     ))}
                   </tbody>
                 </table>
+                <MerchPrices priceIds={item.priceIds} />
                 {item.points.length > 0 && (
                   <ul className="check-list">
                     {item.points.map((point) => (

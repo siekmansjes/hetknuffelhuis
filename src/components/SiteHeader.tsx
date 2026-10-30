@@ -14,7 +14,7 @@ export const NAV_ITEMS = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-// Home alleen op exact "/", de rest ook op onderliggende pagina's (bv. /cases/case-1).
+// Home alleen op exact "/", de rest ook op onderliggende pagina's (bv. /cases/mopi).
 function isCurrent(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 }

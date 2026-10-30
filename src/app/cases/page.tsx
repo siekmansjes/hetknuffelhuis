@@ -6,25 +6,21 @@ import { cases } from "@/lib/cases";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Cases: onze laatste knuffelprojecten",
-  description: "Bekijk drie recente knuffelprojecten van Het Knuffelhuis, met de details die het verschil maken: borduurwerk, label, materiaal en verpakking.",
+  title: "Cases: uitgelichte knuffelprojecten",
+  description: "Volg hoe de knuffels Mopi en Gigi stap voor stap worden gemaakt: van ontwerpschets en prototypes tot het echte sample.",
   path: "/cases",
 });
 
 export default function CasesPage() {
-  const hasExample = cases.some((c) => c.isExample);
   return (
     <>
       <section className="page-hero">
         <div className="wrap">
           <Breadcrumbs items={[{ name: "Cases" }]} />
           <h1>
-            Onze laatste drie <em>knuffelprojecten</em>
+            Uitgelichte <em>projecten</em>
           </h1>
-          <p className="lead">Van eerste schets tot de laatste doos. Per project laten we zien wat er is gemaakt en welke details daarbij horen.</p>
-          {hasExample && (
-            <p className="placeholder-note">Voorbeeldinhoud: de teksten en fotovakken worden vervangen door de echte projecten.</p>
-          )}
+          <p className="lead">Deze knuffels worden nu gemaakt. Per project laten we in vier stappen zien hoe het gaat, van ontwerpschets tot het echte sample.</p>
         </div>
       </section>
       <section className="section section--tight section--deep">

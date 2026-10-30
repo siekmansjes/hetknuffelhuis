@@ -11,7 +11,7 @@ export const steps: Step[] = [
   },
   {
     title: "Goedkeuring en productie",
-    text: "Na jouw akkoord op ontwerp en mockup of sample gaat de knuffel in productie bij een van onze vaste producenten.",
+    text: "We sturen altijd eerst een prototype op ter controle en bevestiging. Pas na jouw akkoord gaat de rest in productie bij een van onze vaste producenten.",
   },
   {
     title: "Levering",

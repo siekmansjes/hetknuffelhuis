@@ -2,8 +2,6 @@ import { PLUSH_MINIMUM } from "@/lib/site";
 
 export type FaqEntry = { question: string; answer: string[] };
 
-// TODO: controleer levertijd, prototype-/sample-werkwijze en veiligheidsnormen
-// voordat de site live gaat; deze antwoorden zijn voorzichtig geformuleerd.
 export const faqs: FaqEntry[] = [
   {
     question: "Wat is de minimale afname voor knuffels?",
@@ -36,8 +34,16 @@ export const faqs: FaqEntry[] = [
     ],
   },
   {
+    question: "Krijg ik eerst een prototype te zien?",
+    answer: [
+      "Ja. Bij knuffels sturen we altijd eerst een prototype op ter controle en bevestiging. Pas na jouw akkoord produceren we de rest.",
+    ],
+  },
+  {
     question: "Zijn de knuffels veilig voor kinderen?",
-    answer: ["Onze knuffels worden gemaakt en getest volgens de geldende EU-normen, en zijn veilig voor alle leeftijden."],
+    answer: [
+      "Ja. Onze knuffels worden gemaakt en getest volgens de geldende EU-normen, en zijn veilig voor alle leeftijden. Bij de knuffels hoort een rapport van een erkend testbureau.",
+    ],
   },
   {
     question: "Kan ik ook merchandise en kleding laten maken?",

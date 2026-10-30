@@ -8,14 +8,14 @@ export function CaseCard({ item, priority = false }: { item: CaseStudy; priority
     <Link href={`/cases/${item.slug}`} className="case-card">
       <div className="case-media">
         {item.image ? (
-          <div className="frame ratio-16-10" style={{ position: "relative" }}>
+          <div className="frame frame--product ratio-16-10" style={{ position: "relative" }}>
             <Image
               src={item.image}
               alt={item.imageAlt ?? ""}
               fill
               sizes="(max-width: 900px) 100vw, 480px"
               priority={priority}
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
             />
           </div>
         ) : (
@@ -26,6 +26,7 @@ export function CaseCard({ item, priority = false }: { item: CaseStudy; priority
           />
         )}
       </div>
+      <span className="case-status">{item.status}</span>
       <h3>{item.title}</h3>
       <p>{item.teaser}</p>
       <span className="link-arrow">Bekijk het project</span>

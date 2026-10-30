@@ -113,7 +113,11 @@ export default function KnuffelsPage() {
               </tr>
               <tr>
                 <th scope="row">Veiligheid</th>
-                <td>Getest volgens de geldende EU-normen, veilig voor alle leeftijden</td>
+                <td>Getest volgens de geldende EU-normen, veilig voor alle leeftijden. Met een rapport van een erkend testbureau</td>
+              </tr>
+              <tr>
+                <th scope="row">Prototype</th>
+                <td>Altijd eerst een prototype ter controle en bevestiging, voordat de rest wordt geproduceerd</td>
               </tr>
               <tr>
                 <th scope="row">Levertijd</th>
@@ -128,7 +132,7 @@ export default function KnuffelsPage() {
         <div className="wrap">
           <div className="section-head">
             <h2 id="proof-title">
-              Zo zien <em>recente projecten</em> eruit
+              Uitgelichte <em>projecten</em>
             </h2>
           </div>
           <div className="cases-grid">

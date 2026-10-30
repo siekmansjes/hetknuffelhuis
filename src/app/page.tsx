@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CaseCard } from "@/components/CaseCard";
-import { CountUp } from "@/components/CountUp";
 import { CtaBlock } from "@/components/CtaBlock";
 import { Wave } from "@/components/Decor";
 import { Faq } from "@/components/Faq";
@@ -18,7 +17,7 @@ const FEATURES: { icon: IconName; title: string; text: string; figure?: boolean 
   { icon: "match", title: "1:1 naar jouw ontwerp", text: "Vorm, verhoudingen, kleuren en details precies zoals jouw merk of karakter." },
   { icon: "users", title: "Eén aanspreekpunt", text: "Van eerste schets tot levering regelt één vast contactpersoon het hele traject." },
   { icon: "box", title: "Vanaf 500 stuks", text: "Een eigen ontwerp in een oplage die past bij een bedrijf of organisatie.", figure: true },
-  { icon: "shield", title: "Veilig voor iedereen", text: "Gemaakt en getest volgens de geldende EU-normen, veilig voor alle leeftijden." },
+  { icon: "shield", title: "Veilig voor iedereen", text: "Getest volgens de geldende EU-normen, met een rapport van een erkend testbureau." },
 ];
 
 const DETAILS: { icon: IconName; title: string; text: string }[] = [
@@ -27,16 +26,14 @@ const DETAILS: { icon: IconName; title: string; text: string }[] = [
   { icon: "tag", title: "Label en hangtag", text: "Een waslabel en hangtag in jouw eigen ontwerp, zodat de knuffel van begin tot eind van jou is." },
 ];
 
-// Waarom klanten kiezen voor Het Knuffelhuis. Overgenomen van de Parkmade-site
-// (localhost:3100) zonder het displaypunt. TODO: bevestig of alle punten kloppen
-// voor Het Knuffelhuis, vooral de keurmerken (CE, EN 71, GPSR).
+// Waarom klanten kiezen voor Het Knuffelhuis (bevestigd door de eigenaar).
 const WHY: { icon: IconName; text: string }[] = [
   { icon: "users", text: "Eén aanspreekpunt, van eerste idee tot levering" },
   { icon: "box", text: "Eén bestelling voor je hele assortiment" },
   { icon: "sparkle", text: "Exclusief ontwerp, nergens anders verkrijgbaar" },
   { icon: "match", text: "Ervaren designers die meedenken als je zelf geen ontwerp hebt" },
   { icon: "factory", text: "Vaste producenten die hun kwaliteit al bewezen hebben" },
-  { icon: "shield", text: "CE, EN 71 en GPSR-compliant, met traceerbare documentatie" },
+  { icon: "shield", text: "CE, EN 71 en GPSR-compliant, met traceerbare documentatie en een rapport van een erkend testbureau" },
 ];
 
 const STEP_ICONS: IconName[] = ["chat", "match", "check", "truck"];
@@ -102,7 +99,7 @@ export default function Home() {
                 <h3>
                   {feature.figure ? (
                     <>
-                      Vanaf <span className="feature-figure"><CountUp to={PLUSH_MINIMUM} /></span> stuks
+                      Vanaf <span className="feature-figure">{PLUSH_MINIMUM}</span> stuks
                     </>
                   ) : (
                     feature.title
@@ -120,11 +117,11 @@ export default function Home() {
         <Wave from="paper" />
         <div className="wrap">
           <Reveal className="section-head">
-            <span className="eyebrow">Recente projecten</span>
+            <span className="eyebrow">Uitgelicht</span>
             <h2 id="cases-title">
-              Drie knuffels, <em>drie verhalen</em>
+              Uitgelichte <em>projecten</em>
             </h2>
-            <p>Zo zien knuffels op maat eruit als ze uit de schetsboeken komen. Met een blik op de details die het verschil maken.</p>
+            <p>Mopi en Gigi worden nu gemaakt. Volg per stap hoe een knuffel van ontwerpschets tot sample groeit.</p>
           </Reveal>
           <div className="cases-grid">
             {cases.map((item, i) => (

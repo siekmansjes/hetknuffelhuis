@@ -5,20 +5,15 @@ Checklist om de site live te zetten. Vink af wat klaar is. Geen geheime waarden 
 ## 1. Inhoud en gegevens (blokkerend)
 
 - [ ] **Bedrijfsgegevens** in `src/lib/site.ts` → `COMPANY`: e-mail, telefoon (+ internationaal formaat), KvK, btw-id, postcode en plaats, Instagram/LinkedIn. Lege velden worden nergens getoond. Zonder e-mailadres sturen de formulieren geen bevestigingsmail.
-- [ ] **De drie cases** in `src/lib/cases.ts`: titel, teaser, klant, formaat, jaar, opdracht/aanpak/resultaat, en `image` plus de vier detailfoto's (`details[].photo`). Verwijder daarna `isExample: true`, dan verdwijnt de voorbeeldmelding.
+- [ ] **Uitgelichte projecten** (Mopi en Gigi) in `src/lib/cases.ts`: per stap `status`, `text` en `photos` invullen zodra er updates zijn. Stappen zonder update tonen "Info volgt".
 - [ ] **Eigen foto's** in plaats van de tijdelijke voorbeeldbeelden (alle bevatten derden-branding of komen uit Parkmade):
   - hero (`public/beeld/knuffels-voorbeeld.webp`)
   - `/knuffels` (`public/beeld/knuffel-groen-voorbeeld.webp`)
   - sleutelhangers, magneten, tattoo's, petje (`public/beeld/*-voorbeeld.webp`), plus kleding (nu fotovak)
-  - cases (`public/cases/case-1`, `case-2`) en "Zit in de details" op de homepage (nu fotovak)
+  - cases (`public/cases/mopi`, `gigi`; stap-foto’s komen erbij) en "Zit in de details" op de homepage (nu fotovak)
   - zoek in de code op `TODO: IMAGE ASSET NEEDED`
-- [ ] **Teksten bevestigen** (zie ook README):
-  - CE, EN 71 en GPSR (home "Waarom kiezen klanten…", FAQ, `/knuffels`)
-  - vaste producenten, ervaren designers, transportpartners
-  - de stap "mockup of sample ter goedkeuring" en de levertijd
-  - kledingopties voor samples (`SAMPLE_TYPES` in `src/lib/validation/forms.ts`)
-  - minimale aantallen en levertijden voor merchandise (staan bewust niet op de site)
-- [ ] **Privacy** (`/privacy`) en **algemene voorwaarden** (`/voorwaarden`): datum invullen en juridisch laten controleren. De voorwaarden zijn afgeleid van Parkmade (50% aanbetaling, 14 dagen klachttermijn, 30 dagen offertegeldigheid).
+- [x] **Teksten bevestigd** (30 oktober 2026): CE/EN 71/GPSR met rapport van een erkend testbureau, vaste producenten en designers, prototype altijd ter goedkeuring, kledingsamples (t-shirt, petje, hoodie), minimale aantallen en prijzen van Parkmade op de site. Levertijden blijven "in overleg".
+- [ ] **Privacy** (`/privacy`): datum invullen. De **algemene voorwaarden** zijn gelijk aan die van Parkmade (50% aanbetaling, 14 dagen klachttermijn, 30 dagen offertegeldigheid); ze tonen een concept-melding totdat `COMPANY.kvk` gevuld is.
 
 ## 2. Accounts en omgeving
 
@@ -55,7 +50,7 @@ Gebruik een eigen testadres en markeer alles in HubSpot als test.
 2. **Kleding-sample** (`?mode=samples`): deal `Sampleaanvraag – …` met kledingstukken, kwaliteit, maten en verzendadres.
 3. **Bericht** (`?mode=contact`): deal `Bericht – <naam>`.
 4. Controleer dat een ongeldig e-mailadres, een leeg verplicht veld en een te groot of fout bestandstype een duidelijke fout geven.
-5. Cookiemelding (alleen als GA is ingesteld): "Weigeren" mag geen `_ga`-cookies of verzoeken naar googletagmanager.com geven.
+5. Cookiemelding (alleen als GA is ingesteld): "Alleen noodzakelijk" mag geen `_ga`-cookies of verzoeken naar googletagmanager.com geven.
 
 ## 5. Laatste controles
 

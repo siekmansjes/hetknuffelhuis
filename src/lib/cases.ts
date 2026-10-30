@@ -1,24 +1,35 @@
-// De drie meest recente knuffelprojecten.
+// Uitgelichte projecten: knuffels die nu gemaakt worden. Per project laten we
+// het proces zien in vier stappen. Elke stap krijgt foto's en een korte
+// toelichting zodra die er zijn; tot die tijd staat er "Info volgt".
 //
-// LET OP: dit is voorbeeldinhoud (`isExample: true`). De teksten tussen
-// [vierkante haken] en de fotovakken moeten vervangen worden door de echte
-// gegevens en foto's van de drie projecten. Zodra dat gebeurd is: zet
-// `isExample` op false (of haal het veld weg), dan verdwijnt de gele
-// voorbeeldmelding vanzelf.
-//
-// Foto's: zet de bestanden in /public/cases/<slug>/ en vul `image` /
-// `photo` in met het pad, bv. "/cases/case-1/hero.webp".
+// Een update plaatsen: zet bij de stap `status` op "bezig" of "klaar", vul
+// `text` en `photos` in. Foto's staan in /public/cases/<slug>/.
 
 export type CaseTone = "sky" | "iris" | "lilac" | "deep" | "surface";
 
-export type CaseDetail = {
+export type StepStatus = "volgt" | "bezig" | "klaar";
+
+export type StepPhoto = {
+  /** Pad naar de foto, bv. "/cases/mopi/prototype-1.webp". */
+  src: string;
+  alt: string;
+  caption?: string;
+  /** "contain" toont het hele beeld op wit (standaard), "cover" vult het vak (detailfoto's). */
+  fit?: "contain" | "cover";
+};
+
+export type CaseStep = {
   title: string;
-  text: string;
-  tone: CaseTone;
-  /** Pad naar de echte foto, bv. "/cases/case-1/borduurwerk.webp". */
-  photo?: string;
-  /** Alt-tekst bij de foto. */
-  alt?: string;
+  /** Korte uitleg bij de stap zelf, los van de update per project. */
+  summary: string;
+  /** Extra uitleg bij de stap, als alinea's. Hetzelfde voor elk project. */
+  more?: string[];
+  status: StepStatus;
+  /** De update bij dit project. Leeg laten zolang er niets te melden is. */
+  text?: string;
+  photos?: StepPhoto[];
+  /** Tekst die getoond wordt zolang er nog geen update is. */
+  soon?: string;
 };
 
 export type CaseStudy = {
@@ -26,83 +37,86 @@ export type CaseStudy = {
   title: string;
   /** Korte teaser voor de overzichten. */
   teaser: string;
-  klant: string;
-  jaar: string;
-  formaat: string;
-  opdracht: string;
-  aanpak: string;
-  resultaat: string;
+  /** Waar het project nu staat, bv. "Wordt nu gemaakt". */
+  status: string;
   tone: CaseTone;
-  /** Hoofdfoto (wordt in de kaart en bovenaan de casepagina getoond). */
+  /** Hoofdfoto (kaart en bovenaan de casepagina). */
   image?: string;
   imageAlt?: string;
-  details: CaseDetail[];
-  isExample?: boolean;
+  steps: CaseStep[];
 };
 
-const DETAIL_TITLES = ["Borduurwerk", "Label & hangtag", "Stof & vacht", "Verpakking"] as const;
-const DETAIL_TONES: CaseTone[] = ["sky", "iris", "lilac", "deep"];
-
-function exampleDetails(): CaseDetail[] {
-  return DETAIL_TITLES.map((title, i) => ({
-    title,
-    text: "[Korte toelichting bij deze foto: wat zie je hier en waarom is het bijzonder?]",
-    tone: DETAIL_TONES[i],
-  }));
+function processSteps(name: string, sketch: StepPhoto): CaseStep[] {
+  return [
+    {
+      title: "Ontwerpschets",
+      summary: "Het startpunt van elke knuffel. Alles is aan te leveren, van een tekening tot een AI-beeld.",
+      more: [
+        "Vanaf daar maken we een ontwerpvoorstel dat richting productie gaat. Daarin staan de maten, de afwerking, de kleurcodes en eventuele andere informatie.",
+        "Tijdens deze fase denken we ook na over hoe de hangtag eruit moet zien en of er een logo op het label komt. Op de achterkant van de hangtag staat standaardinformatie, zoals een CE-keurmerk, adresgegevens en wasvoorschriften.",
+        "Zo heb je een wettelijk juist gemarkeerde en gedocumenteerde knuffel die geschikt is voor alle leeftijden.",
+      ],
+      status: "klaar",
+      text: `Het AI-beeld is de ontwerpschets van ${name}.`,
+      photos: [sketch],
+    },
+    {
+      title: "Eerste prototype",
+      summary: "De eerste echte knuffel, om vorm, verhoudingen en stoffen te beoordelen.",
+      status: "volgt",
+    },
+    {
+      title: "Definitief prototype",
+      summary: "Het aangepaste prototype, met alle opmerkingen verwerkt.",
+      status: "volgt",
+    },
+    {
+      title: "Het echte sample",
+      summary: "De knuffel zoals hij in productie gaat, met foto’s van alle details.",
+      status: "volgt",
+      soon: "Info volgt. Hier komen foto’s van de details te staan.",
+    },
+  ];
 }
 
 export const cases: CaseStudy[] = [
   {
-    slug: "case-1",
-    title: "[Titel van het eerste project]",
-    teaser: "[Eén of twee zinnen over dit project: voor wie, welke knuffel en wat maakt hem bijzonder.]",
-    klant: "[Klantnaam]",
-    jaar: "[Jaar]",
-    formaat: "[Formaat]",
-    opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
-    aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
-    resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
+    slug: "mopi",
+    title: "Mopi",
+    teaser: "Mopi wordt nu gemaakt. Volg stap voor stap hoe Mopi van ontwerpschets tot sample groeit.",
+    status: "Wordt nu gemaakt",
     tone: "surface",
-    // TODO: IMAGE ASSET NEEDED — tijdelijke placeholder (met Parkmade-logo). Vervangen door een
-    // echte foto van project 1.
-    image: "/cases/case-1/voorbeeld-knuffel.webp",
-    imageAlt: "Groene pluche knuffel met gele details (voorbeeldbeeld)",
-    details: exampleDetails(),
-    isExample: true,
+    image: "/cases/mopi/hoofdfoto.webp",
+    imageAlt: "Mopi, een groene pluche knuffel met gele details",
+    steps: processSteps("Mopi", {
+      src: "/cases/mopi/hoofdfoto.webp",
+      alt: "Ontwerpschets (AI-beeld) van Mopi, een groene pluche knuffel met gele details",
+      caption: "Ontwerpschets (AI-beeld)",
+    }),
   },
   {
-    slug: "case-2",
-    title: "[Titel van het tweede project]",
-    teaser: "[Eén of twee zinnen over dit project: voor wie, welke knuffel en wat maakt hem bijzonder.]",
-    klant: "[Klantnaam]",
-    jaar: "[Jaar]",
-    formaat: "[Formaat]",
-    opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
-    aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
-    resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
+    slug: "gigi",
+    title: "Gigi",
+    teaser: "Gigi wordt nu gemaakt. Volg stap voor stap hoe Gigi van ontwerpschets tot sample groeit.",
+    status: "Wordt nu gemaakt",
     tone: "surface",
-    // TODO: tijdelijke foto; vervangen door de definitieve projectfoto (en de teksten hierboven).
-    image: "/cases/case-2/voorbeeld-knuffel.webp",
-    imageAlt: "Bruine bever-knuffel in een blauw jasje met groene details (voorbeeldbeeld)",
-    details: exampleDetails(),
-    isExample: true,
-  },
-  {
-    slug: "case-3",
-    title: "[Titel van het derde project]",
-    teaser: "[Eén of twee zinnen over dit project: voor wie, welke knuffel en wat maakt hem bijzonder.]",
-    klant: "[Klantnaam]",
-    jaar: "[Jaar]",
-    formaat: "[Formaat]",
-    opdracht: "[Wat wilde de opdrachtgever? Welk karakter, merk of verhaal moest er een knuffel van worden?]",
-    aanpak: "[Hoe zijn jullie te werk gegaan? Van schets en prototype tot productie.]",
-    resultaat: "[Wat is er geleverd, en hoe is de knuffel ontvangen?]",
-    tone: "surface",
-    details: exampleDetails(),
-    isExample: true,
+    image: "/cases/gigi/hoofdfoto.webp",
+    imageAlt: "Gigi, een zittende giraffe-knuffel met bruine vlekken, grote groene ogen en een glimlach",
+    steps: processSteps("Gigi", {
+      src: "/cases/gigi/hoofdfoto.webp",
+      alt: "Ontwerpschets (AI-beeld) van Gigi, een zittende giraffe met bruine vlekken en grote groene ogen",
+      caption: "Ontwerpschets (AI-beeld)",
+    }),
   },
 ];
 
 export function getCase(slug: string): CaseStudy | undefined {
   return cases.find((c) => c.slug === slug);
+}
+
+/** Aantal afgeronde stappen, en de stap waar het project nu staat (1-gebaseerd). */
+export function progress(item: CaseStudy): { done: number; total: number; current: CaseStep | undefined } {
+  const done = item.steps.filter((s) => s.status === "klaar").length;
+  const current = item.steps.find((s) => s.status === "bezig") ?? item.steps.find((s) => s.status === "volgt");
+  return { done, total: item.steps.length, current };
 }

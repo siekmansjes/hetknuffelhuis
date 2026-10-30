@@ -25,7 +25,7 @@ Google Analytics en het domein.
 | --- | --- |
 | `/` | Home: hero, cases, details, werkwijze, merchandise, kleding-sample, FAQ |
 | `/knuffels` | Knuffels op maat: mogelijkheden en specificaties |
-| `/cases`, `/cases/[slug]` | De 3 laatste knuffelprojecten, met detailfoto’s |
+| `/cases`, `/cases/[slug]` | Uitgelichte projecten (Mopi, Gigi) met het proces in vier stappen |
 | `/merchandise` | Sleutelhangers, tattoo’s, magneten, petjes, kleding |
 | `/werkwijze`, `/faq` | Proces en veelgestelde vragen |
 | `/contact` | Keuze: offerte (simpel formulier), kleding-sample, bericht |
@@ -37,16 +37,17 @@ Fris en speels-zakelijk, geïnspireerd op plushtoysfactory.eu en bellusconcepts.
 (zonder hun lettertypes of roze knoppen): wit papier, warme crème vlakken en
 teal als actiekleur voor knoppen, getekende lijn-icoontjes in ronde
 badges, golfranden tussen secties, een organische hero-blob met gestikte rand,
-zwevende doodles, scroll-reveal, een gekantelde afsluitkaart en
-tellertjes. Foto's blijven rechthoekig met een dunne rand. Alle beweging staat uit
+zwevende doodles, scroll-reveal, en een gekantelde afsluitkaart.
+Foto's blijven rechthoekig met een dunne rand. Alle beweging staat uit
 bij "minder beweging" (prefers-reduced-motion). Fonts: Outfit (koppen) en DM Sans
 (tekst). Tokens bovenin `src/app/globals.css`; iconen in `src/components/Icon.tsx`.
 
 ## Nog in te vullen (zoek op `TODO` en `[...]`)
 
-- **Cases** (`src/lib/cases.ts`): 3 voorbeeldcases met placeholders. Vul klant,
-  aantal, formaat, jaar, teksten en detailfoto’s in en zet `isExample` weg.
-  Foto’s in `public/cases/<slug>/`.
+- **Cases** (`src/lib/cases.ts`): Mopi en Gigi, elk met vier processtappen
+  (ontwerpschets, eerste prototype, definitief prototype, echt sample). Zet per
+  stap `status` op "bezig" of "klaar" en vul `text` en `photos` in. Foto’s in
+  `public/cases/<slug>/`.
 - **Foto’s**: overal waar “Foto volgt” staat is een fotovak. De hero, tattoo’s
   en petjes gebruiken tijdelijke voorbeeldbeelden uit Parkmade
   (`public/beeld/*-voorbeeld.webp`); vervang die door eigen foto’s.

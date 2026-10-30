@@ -8,11 +8,9 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/voorwaarden",
 });
 
-// TODO: JURIDISCH CONTROLEREN. Deze tekst is afgeleid van de voorwaarden van
-// Parkmade (betaling 50/50, 14 dagen klachttermijn, 30 dagen geldigheid, enz.)
-// en moet worden bevestigd of aangepast voor Het Knuffelhuis, bijvoorbeeld
-// de aanbetaling en het annuleringsbeleid bij knuffels op maat.
-const LAST_UPDATED = "[DATUM]";
+// Dezelfde voorwaarden als Parkmade (betaling 50/50, 14 dagen klachttermijn,
+// 30 dagen geldigheid, enz.), zo bepaald door de eigenaar.
+const LAST_UPDATED = "30 oktober 2026";
 
 export default function VoorwaardenPage() {
   const contact = COMPANY.email ? <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> : "het contactformulier op deze website";
@@ -27,7 +25,7 @@ export default function VoorwaardenPage() {
         <div className="prose" style={{ marginTop: 28 }}>
           <h1>Algemene voorwaarden</h1>
           <p className="hint">Laatst bijgewerkt: {LAST_UPDATED}</p>
-          {!COMPANY.kvk && <p className="placeholder-note">Concept: bedrijfsgegevens invullen en voorwaarden juridisch laten controleren.</p>}
+          {!COMPANY.kvk && <p className="placeholder-note">Concept: bedrijfsgegevens nog invullen.</p>}
 
           <p>
             Deze algemene voorwaarden zijn van toepassing op alle offertes, bestellingen en overeenkomsten tussen Het Knuffelhuis{identity ? ` (${identity})` : ""} en de opdrachtgever, tenzij schriftelijk anders is overeengekomen.
@@ -48,9 +46,9 @@ export default function VoorwaardenPage() {
             Alle prijzen zijn in euro’s en exclusief btw, tenzij anders vermeld. Prijzen zijn gebaseerd op de in de offerte genoemde aantallen, materialen en uitvoering; wijzigingen hierin kunnen leiden tot een aangepaste prijs, die vooraf met de opdrachtgever wordt afgestemd.
           </p>
 
-          <h2>4. Ontwerp, mockup of sample en akkoord</h2>
+          <h2>4. Ontwerp, prototype of sample en akkoord</h2>
           <p>
-            Voordat een bestelling in productie gaat, ontvangt de opdrachtgever een mockup of sample ter goedkeuring. Productie start pas na schriftelijk akkoord van de opdrachtgever op dit ontwerp. Fouten (bijvoorbeeld in tekst, kleur of logo) die pas na dit akkoord worden ontdekt, komen voor rekening van de opdrachtgever, tenzij de fout is veroorzaakt door Het Knuffelhuis en niet zichtbaar was in het goedgekeurde ontwerp.
+            Voordat een bestelling in productie gaat, ontvangt de opdrachtgever een mockup, prototype of sample ter goedkeuring. Productie start pas na schriftelijk akkoord van de opdrachtgever op dit ontwerp. Fouten (bijvoorbeeld in tekst, kleur of logo) die pas na dit akkoord worden ontdekt, komen voor rekening van de opdrachtgever, tenzij de fout is veroorzaakt door Het Knuffelhuis en niet zichtbaar was in het goedgekeurde ontwerp.
           </p>
 
           <h2>5. Levering en levertijd</h2>
